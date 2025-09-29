@@ -1,0 +1,14 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+/generated/prisma
+
+/resultados-exportados/
+
+.DS_Store
+dist/
