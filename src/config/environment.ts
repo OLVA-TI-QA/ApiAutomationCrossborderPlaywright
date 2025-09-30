@@ -65,17 +65,11 @@ export interface EnvironmentConfig {
   testSuite: string;
 
   // API configuration
-  apiBaseUrlImportacionDev: string;
-  apiBaseUrlImportacionProd: string;
-  apiBaseUrlImportacionv4: string;
-  apiBaseUrlGeoDev: string;
-  apiBaseUrlGeoProd: string;
-  apiBaseUrlGeoApiv4: string;
-  baseurlcorp: string
+  apiBaseUrlCrossborderDev: string;
 
 
   //tokens
-  geoXApiKey: string;
+  // geoXApiKey: string;
 }
 
 /**
@@ -130,14 +124,8 @@ export const environment: EnvironmentConfig = {
   environment: process.env.ENVIRONMENT || 'development', // is obtained from the .env file
   testSuite: process.env.TEST_SUITE || 'smoke',
 
-  apiBaseUrlImportacionDev: process.env.API_BASE_URL_IMPORTACION_DEV || '', // is obtained from the .env file
-  apiBaseUrlImportacionProd: process.env.API_BASE_URL_IMPORTACION_PROD || '',
-  apiBaseUrlImportacionv4: process.env.API_BASE_URL_IMPORTACIONV4 || '',
-  apiBaseUrlGeoDev: process.env.API_BASE_URL_GEO_DEV || '',
-  apiBaseUrlGeoProd: process.env.API_BASE_URL_GEO_PROD || '',
-  apiBaseUrlGeoApiv4: process.env.API_BASE_URL_GEO_API_v4 || '',
-  geoXApiKey: process.env.GEO_X_API_KEY || '',
-  baseurlcorp: process.env.BASE_URL_CORP || ''
+  apiBaseUrlCrossborderDev: process.env.API_BASE_URL_CROSSBORDER_DEV || '', // is obtained from the .env file
+  // geoXApiKey: process.env.GEO_X_API_KEY || ''
 };
 
 function parseNumber(value: string | undefined, defaultValue: number): number {
