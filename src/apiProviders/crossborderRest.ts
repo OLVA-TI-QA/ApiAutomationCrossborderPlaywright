@@ -18,7 +18,9 @@ export class CrossBorderRest {
     }
 
     public async getToken(token: string) {
-        const getToken = await this.baseUrl!.post('/api/oauth/token', {
+        console.log('base url', environment.apiBaseUrlCrossborderDev)
+        console.log('token', token)
+        const getToken = await this.baseUrl!.post('/crossborder-hub/api/oauth/token', {
             headers: {
                 Authorization: `Basic ${token}`
             },

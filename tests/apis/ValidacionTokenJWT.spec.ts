@@ -11,8 +11,8 @@ test.beforeEach(async () => {
 })
 
 
-test('Buscar auditoria', async () => {
-    const getResponse = await crossBorderRest.getToken('MTk2MzY4OmlCUzB5MjN4aEdtbFNxbFZkdXFuekxQVGd1OW9zUzlzVzY0ZU1qSUZIbW8=')
+test('TC-AUTH-001: Obtener token', async () => {
+    const getResponse = await crossBorderRest.getToken('MTE5NjM2ODppQlMweTIzeGhHbWxTcWxWZHVxbnpMUFRndTlvc1M5c1c2NGVNaklGSG1v')
 
     expect(getResponse.status()).toBe(200);
     console.log(getResponse.json())
