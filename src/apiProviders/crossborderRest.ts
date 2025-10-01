@@ -17,13 +17,21 @@ export class CrossBorderRest {
         return this
     }
 
-    public async getToken(token: string) {
-        console.log('base url', environment.apiBaseUrlCrossborderDev)
-        console.log('token', token)
+    public async postToken(token?: string) {
         const getToken = await this.baseUrl!.post('/crossborder-hub/api/oauth/token', {
             headers: {
                 Authorization: `Basic ${token}`
             },
+            data: {
+                grant_type: 'client_credentials'
+            }
+        })
+
+        return getToken
+    }
+
+    public async postTokenSinHeader() {
+        const getToken = await this.baseUrl!.post('/crossborder-hub/api/oauth/token', {
             data: {
                 grant_type: 'client_credentials'
             }
