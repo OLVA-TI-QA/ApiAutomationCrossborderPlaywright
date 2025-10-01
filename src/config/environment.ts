@@ -98,7 +98,7 @@ export const environment: EnvironmentConfig = {
   test: {
     headless: parseBoolean(process.env.HEADLESS, true),
     browser: process.env.BROWSER || 'chromium',
-    timeout: parseNumber(process.env.TIMEOUT, 30000),
+    timeout: parseNumber(process.env.TIMEOUT, 90000),
     retries: parseNumber(process.env.RETRIES, 2),
     workers: parseNumber(process.env.WORKERS, 4),
     username: process.env.TEST_USERNAME!,

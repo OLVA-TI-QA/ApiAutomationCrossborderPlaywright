@@ -1,8 +1,9 @@
-import { expect, test } from '@playwright/test';
-import { CrossBorderRest } from '@/apiProviders/crossborderRest';
-import { tokenType } from '@/types/Interfaces';
+import { expect, test } from '@playwright/test'
+import { CrossBorderRest } from '@/apiProviders/crossborderRest'
+import { tokenType } from '@/types/Interfaces'
+import { generateRandomAWB } from '@/utils/helpers'
 
-let crossBorderRest: CrossBorderRest;
+let crossBorderRest: CrossBorderRest
 
 // Setup de provider before all test
 test.beforeEach(async () => {
@@ -10,13 +11,28 @@ test.beforeEach(async () => {
     crossBorderRest = await currentEnvioRest.init()
 })
 
-
-test('TC-AUTH-001: Autenticación OK', async () => {
+test('TC-SEGU-API-01: Acceso OK', async () => {
     try {
-        const getResponse = await crossBorderRest.postToken(tokenType.Eduardo)
+        const getTokenResponse = await crossBorderRest.postToken(tokenType.Eduardo)
 
-        expect(getResponse.status()).toBe(200);
-        console.log(getResponse.json())
+        expect(getTokenResponse.status()).toBe(200)
+        expect(getTokenResponse.json()).resolves.toMatchObject({
+            access_token: expect.any(String),
+            token_type: "Bearer"
+        });
+        console.log(getTokenResponse.json())
+
+        const authBody = await getTokenResponse.json()
+        const token = authBody.access_token
+        expect(token).toBeDefined()
+        console.log(`🔐 Token obtenido: ${token}`)
+
+        const crearParcelResponse = await crossBorderRest.postCrearParcel(token, generateRandomAWB())
+        expect(crearParcelResponse.status()).toBe(201)
+        expect(crearParcelResponse.json()).toMatchObject({
+            status: 'CREATED',
+            message: 'Parcel created successfully'
+        })
     } catch (error: unknown) {
         if (error instanceof Error) {
             console.error('Connection error:', error.message)
@@ -27,11 +43,10 @@ test('TC-AUTH-001: Autenticación OK', async () => {
     }
 })
 
-test('TC-AUTH-002: Basic Mal Formado', async () => {
+test('TC-SEGU-API-02: Token Ausente', async () => {
     try {
-        const getResponse = await crossBorderRest.postToken(tokenType.TokenMalFormado)
-
-        expect(getResponse.status()).toBe(403);
+        const crearParcelResponse = await crossBorderRest.postCrearParcelSinToken('AWBN056835492')
+        expect(crearParcelResponse.status()).toBe(403)
     } catch (error: unknown) {
         if (error instanceof Error) {
             console.error('Connection error:', error.message)
@@ -42,62 +57,71 @@ test('TC-AUTH-002: Basic Mal Formado', async () => {
     }
 })
 
-test('TC-AUTH-006: Integración por Cliente', async () => {
-    const tokenEntries = Object.entries(tokenType).slice(0, 3);
+test('TC-SEGU-API-03: Duplicado de parcel', async () => {
+    try {
+        const getTokenResponse = await crossBorderRest.postToken(tokenType.Eduardo)
 
-    const promises = tokenEntries.map(async ([tokenName, tokenValue]) => {
-        try {
-            console.log(`Testing token: ${tokenName}`);
-            const getResponse = await crossBorderRest.postToken(tokenValue);
-            expect(getResponse.status()).toBe(200);
-            console.log(`Response for ${tokenName}:`, await getResponse.json());
-            return { tokenName, success: true };
-        } catch (error: unknown) {
-            if (error instanceof Error) {
-                console.error(`Connection error for token ${tokenName}:`, error.message);
-            } else {
-                console.error(`Unknown error for token ${tokenName}:`, error);
-            }
-            throw error;
+        expect(getTokenResponse.status()).toBe(200)
+        expect(getTokenResponse.json()).resolves.toMatchObject({
+            access_token: expect.any(String),
+            token_type: "Bearer"
+        });
+        console.log(getTokenResponse.json())
+
+        const authBody = await getTokenResponse.json()
+        const token = authBody.access_token
+        expect(token).toBeDefined()
+        console.log(`🔐 Token obtenido: ${token}`)
+
+        const guiaDuplicada = 'AWBN056835491'
+        const crearParcelResponse = await crossBorderRest.postCrearParcel(guiaDuplicada, token)
+        expect(crearParcelResponse.status()).toBe(422)
+        expect(crearParcelResponse.json()).toMatchObject({
+            code: 'way-bill-exists',
+            message: `Guía ${guiaDuplicada} ya existe`
+        })
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error('Connection error:', error.message)
+        } else {
+            console.error('Unknown error:', error)
         }
-    });
-
-    await Promise.all(promises);
+        throw error
+    }
 })
 
-test('TC-AUTH-014: Token Repetido', async () => {
-    const tokens: string[] = [];
-    const numberOfExecutions = 3;
-
-    for (let i = 0; i < numberOfExecutions; i++) {
-        try {
-            console.log(`Execution ${i + 1}:`);
-            const getResponse = await crossBorderRest.postToken(tokenType.Eduardo);
-
-            expect(getResponse.status()).toBe(200);
-            const responseData = await getResponse.json();
-            console.log(`Response ${i + 1}:`, responseData);
-
-            const currentToken = responseData.access_token;
-
-            // Validar que el token no sea igual a los anteriores
-            expect(tokens).not.toContain(currentToken);
-            tokens.push(currentToken);
-
-            // Esperar 1 segundo entre ejecuciones
-            if (i < numberOfExecutions - 1) {
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-
-        } catch (error: unknown) {
-            if (error instanceof Error) {
-                console.error(`Connection error on execution ${i + 1}:`, error.message);
-            } else {
-                console.error(`Unknown error on execution ${i + 1}:`, error);
-            }
-            throw error;
+test('TC-SEGU-API-04: Bearer Vacio', async () => {
+    try {
+        const crearParcelResponse = await crossBorderRest.postCrearParcel('AWBN056835492')
+        expect(crearParcelResponse.status()).toBe(401)
+        expect(crearParcelResponse.json()).resolves.toMatchObject({
+            message: 'token inválido',
+            status: 'FAILED'
+        })
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error('Connection error:', error.message)
+        } else {
+            console.error('Unknown error:', error)
         }
+        throw error
     }
+})
 
-    console.log('All tokens are unique:', tokens);
+test('TC-SEGU-API-06: Firma Inválida', async () => {
+    try {
+        const crearParcelResponse = await crossBorderRest.postCrearParcel('AWBN056835492', tokenType.TokenInvalido)
+        expect(crearParcelResponse.status()).toBe(401)
+        expect(crearParcelResponse.json()).resolves.toMatchObject({
+            message: 'token inválido',
+            status: 'FAILED'
+        })
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error('Connection error:', error.message)
+        } else {
+            console.error('Unknown error:', error)
+        }
+        throw error
+    }
 })
