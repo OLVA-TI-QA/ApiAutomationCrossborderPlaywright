@@ -1,6 +1,6 @@
 import { request, APIRequestContext } from '@playwright/test'
 import { environment } from '@config/environment'
-// import crearEnvioBodyJson from '@/testData/archivosJson/crearEnvioBody.json'
+import parcelDeclareRequest from '@/testData/archivosJson/parcelDeclareRequest.json'
 // import { CrearEnvioBody } from '@/types/crearEnvioInterfaces'
 
 export class CrossBorderRest {
@@ -40,42 +40,57 @@ export class CrossBorderRest {
         return getToken
     }
 
-    //   public async postCrearEnvio(
-    //     token: string,
-    //     codigoOptitrack: number,
-    //     idSede: number,
-    //     idOficina: number,
-    //     direccion: string,
-    //     consignado: string,
-    //     idUbigeo: number
-    //   ) {
-    //     // Clonar el JSON para evitar mutaciones globales
-    //     const body = { ...crearEnvioBodyJson }
+    public async postCrearParcel(wayBillNo: string, token?: string) {
+        // Clonar el JSON para evitar mutaciones globales
+        const body = { ...parcelDeclareRequest }
 
-    //     // Sobrescribir solo los campos necesarios
-    //     body.codigoOptitrack = codigoOptitrack
-    //     body.idSede = idSede
-    //     body.idOficina = idOficina
-    //     body.direccionEntrega = direccion
-    //     body.consignado = consignado
-    //     body.idUbigeo = idUbigeo
+        // Sobrescribir solo los campos necesarios
+        body.wayBillNo = wayBillNo
 
-    //     const getResponse = await this.baseUrl!.post('/envioRest/webresources/envio/crear', {
-    //       headers: {
-    //         Authorization: `Bearer ${token}`
-    //       },
-    //       data: body
-    //     })
+        const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: body
+        })
 
-    //     return getResponse
-    //   }
+        //Log response details for debugging
+        if (!getResponse.ok()) {
+            const errorBody = await getResponse.text()
+            console.log('Error response:', errorBody)
+        }
 
-    //   public async postCrearMultiplesEnvios(token: string, listaDeEnvios: CrearEnvioBody[]) {
+        return getResponse
+    }
+
+    public async postCrearParcelSinToken(wayBillNo: string) {
+        // Clonar el JSON para evitar mutaciones globales
+        const body = { ...parcelDeclareRequest }
+
+        // Sobrescribir solo los campos necesarios
+        body.wayBillNo = wayBillNo
+
+        const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
+            data: body
+        })
+
+
+
+        //Log response details for debugging
+        if (!getResponse.ok()) {
+            const errorBody = await getResponse.text()
+            console.log('Error response:', errorBody)
+        }
+
+        return getResponse
+    }
+
+    // public async postCrearMultiplesEnvios(token: string, listaDeEnvios: CrearEnvioBody[]) {
     //     return await this.baseUrl!.post('/envioRest/webresources/envio/crear', {
-    //       data: listaDeEnvios,
-    //       headers: {
-    //         Authorization: `Bearer ${token}`
-    //       }
+    //         data: listaDeEnvios,
+    //         headers: {
+    //             Authorization: `Bearer ${token}`
+    //         }
     //     })
-    //   }
+    // }
 }

@@ -17,6 +17,10 @@ test('TC-AUTH-001: Autenticación OK', async () => {
 
         expect(getResponse.status()).toBe(200);
         console.log(getResponse.json())
+        expect(getResponse.json()).resolves.toMatchObject({
+            access_token: expect.any(String),
+            token_type: "Bearer"
+        });
     } catch (error: unknown) {
         if (error instanceof Error) {
             console.error('Connection error:', error.message)
@@ -50,6 +54,10 @@ test('TC-AUTH-006: Integración por Cliente', async () => {
             console.log(`Testing token: ${tokenName}`);
             const getResponse = await crossBorderRest.postToken(tokenValue);
             expect(getResponse.status()).toBe(200);
+            expect(getResponse.json()).resolves.toMatchObject({
+                access_token: expect.any(String),
+                token_type: "Bearer"
+            });
             console.log(`Response for ${tokenName}:`, await getResponse.json());
             return { tokenName, success: true };
         } catch (error: unknown) {
@@ -75,6 +83,10 @@ test('TC-AUTH-014: Token Repetido', async () => {
             const getResponse = await crossBorderRest.postToken(tokenType.Eduardo);
 
             expect(getResponse.status()).toBe(200);
+            expect(getResponse.json()).resolves.toMatchObject({
+                access_token: expect.any(String),
+                token_type: "Bearer"
+            });
             const responseData = await getResponse.json();
             console.log(`Response ${i + 1}:`, responseData);
 

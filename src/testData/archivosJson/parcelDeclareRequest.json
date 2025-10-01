@@ -7,6 +7,7 @@
   "purchaseWebsite": "https://shop.example.cn/product/ABC123",
   "valueAddedTax": "12.300",
   "shipping": "35.500",
+  "invoiceNumber": "INV-2024-001234",
   "ctnNumber": "CTN-9Z7Q-002",
   "wayBillNo": "AWBN056835466",
   "insurance": "48.75",
