@@ -10,7 +10,8 @@ export enum tokenType {
     TokenInvalido = 'eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NTkzNzY0NTYsIm5vbWJyZSI6IjExOTYzNjgifQ.hvZQHHnhfLx5G0bz0S2UsmWnTvL7mntyqWEMm1JTtq21mVs-lAkrtnyC-I4hOIx_testitotestitotestitotestito'
 }
 
-export interface Welcome {
+export interface ParcelDeclareRequestBody {
+    idTestCase?: string;
     countryManufacture: string;
     logisticsCode: string;
     currency: string;
@@ -26,6 +27,7 @@ export interface Welcome {
     senderInfo: Info;
     returnInfo: Info;
     itemList: ItemList[];
+    status?: string;
 }
 
 export interface ItemList {
@@ -48,4 +50,22 @@ export interface Info {
     idUbigeo: string;
     zipCode: string;
     identityNumber: string;
+}
+
+export interface ExportConfig<T> {
+    data: T[]
+    nombreBase: string
+    headers: string[]
+    nombreHoja?: string
+    extraerCampos: CampoExtractor<T>[]
+}
+
+export type CampoExtractor<T> = (item: T) => string | number | boolean | undefined
+
+export interface ExcelValidacionExportParcelDeclare {
+    idTestCase: string
+    statusEsperado?: string
+    statusObtenido?: string
+    correcto: boolean
+    mensajeErrorObtenido?: string
 }
