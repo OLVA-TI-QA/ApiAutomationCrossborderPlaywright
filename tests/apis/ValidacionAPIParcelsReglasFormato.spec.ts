@@ -22,7 +22,7 @@ test.describe('Pruebas de la API de WhatsApp con Excel', () => {
 
     // Test principal con múltiples envíos
     test('Enviar peticiones con valores no válidos y validar respuestas correctas', async () => {
-        // Aumenta el tiempo de espera a 80 segundos (80000ms)
+        // Aumenta el tiempo de espera a 120 segundos (120000ms)
         test.setTimeout(120000)
 
         // Paso 1: Leer Excel
@@ -97,9 +97,6 @@ test.describe('Pruebas de la API de WhatsApp con Excel', () => {
                 const itemListDosProductUrl = procesarValorCeldaExcel(fila['itemList-dos-productUrl'])
                 const statusEsperado = fila['status']
                 const bodyResponseEsperado = fila['bodyResponse']
-                // const fieldEsperado = procesarValorCeldaExcel(fila['field'])
-                // const codeEsperado = procesarValorCeldaExcel(fila['code'])
-                // const statusResponse = procesarValorCeldaExcel(fila['statusResponse'])
 
                 const body: ParcelDeclareRequestBody = {
                     countryManufacture,
@@ -153,7 +150,7 @@ test.describe('Pruebas de la API de WhatsApp con Excel', () => {
 
                 const response = await crossBorderRest.postCrearParcelMasivo(token, body)
 
-                // Retornamos la respuesta y la fila original para la validación
+                // Retornamos la respuesta y algunos datos adicionales para la validación
                 return { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo }
             })
 
@@ -254,9 +251,7 @@ test.describe('Pruebas de la API de WhatsApp con Excel', () => {
                     wayBillNo: wayBillNoObtenido
                 })
 
-                console.log(
-                    `✅ Fila procesada: ID testcase ${idTestCase} - Status Correcto?: ${statusCorrecto} - Body Response Correcto?: ${bodyResponseEsperadoCorrecto}'`
-                )
+                console.log(`✅ Fila procesada: ID testcase ${idTestCase} - Status Correcto?: ${statusCorrecto} - Body Response Correcto?: ${bodyResponseEsperadoCorrecto}'`)
             }
         } // Fin del bucle de lotes
 
