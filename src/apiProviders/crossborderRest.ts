@@ -1,6 +1,7 @@
 import { request, APIRequestContext } from '@playwright/test'
 import { environment } from '@config/environment'
 import parcelDeclareRequest from '@/testData/archivosJson/parcelDeclareRequest.json'
+import { ParcelDeclareRequestBody } from '@/types/Interfaces'
 // import { CrearEnvioBody } from '@/types/crearEnvioInterfaces'
 
 export class CrossBorderRest {
@@ -65,16 +66,31 @@ export class CrossBorderRest {
 
     public async postCrearParcelSinToken(wayBillNo: string) {
         // Clonar el JSON para evitar mutaciones globales
-        const body = { ...parcelDeclareRequest }
-
-        // Sobrescribir solo los campos necesarios
-        body.wayBillNo = wayBillNo
+        const body = { ...parcelDeclareRequest, wayBillNo }
 
         const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
             data: body
         })
 
 
+
+        //Log response details for debugging
+        if (!getResponse.ok()) {
+            const errorBody = await getResponse.text()
+            console.log('Error response:', errorBody)
+        }
+
+        return getResponse
+    }
+
+    public async postCrearParcelMasivo(token: string, bodyRequest: ParcelDeclareRequestBody) {
+        // console.log('Body request:', bodyRequest)
+        const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: bodyRequest
+        })
 
         //Log response details for debugging
         if (!getResponse.ok()) {

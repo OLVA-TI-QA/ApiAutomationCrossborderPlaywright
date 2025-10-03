@@ -11,45 +11,44 @@ export enum tokenType {
 }
 
 export interface ParcelDeclareRequestBody {
-    idTestCase?: string;
-    countryManufacture: string;
-    logisticsCode: string;
-    currency: string;
-    grossWeight: string;
-    packageCount: string;
-    purchaseWebsite: string;
-    valueAddedTax: string;
-    shipping: string;
-    ctnNumber: string;
-    wayBillNo: string;
-    insurance: string;
-    receiverInfo: Info;
-    senderInfo: Info;
-    returnInfo: Info;
-    itemList: ItemList[];
-    status?: string;
+    countryManufacture: string | null;
+    logisticsCode: string | null;
+    currency: string | null;
+    grossWeight: string | null;
+    packageCount: string | null;
+    purchaseWebsite: string | null;
+    valueAddedTax: string | null;
+    shipping: string | null;
+    ctnNumber?: string | null;
+    invoiceNumber: string | null;
+    wayBillNo: string | null;
+    insurance?: string | null;
+    receiverInfo: Info | null;
+    senderInfo?: Info | null;
+    returnInfo?: Info | null;
+    itemList: ItemList[] | null;
 }
 
 export interface ItemList {
-    currency: string;
-    itemSequenceNumber: string;
-    descriptionGoods: string;
-    price: string;
-    qty: string;
-    grossWeight: string;
-    brand: string;
-    model: string;
-    productUrl: string;
+    currency: string | null;
+    itemSequenceNumber: string | null;
+    descriptionGoods: string | null;
+    price: string | null;
+    qty: string | null;
+    grossWeight: string | null;
+    brand: string | null;
+    model: string | null;
+    productUrl: string | null;
 }
 
 export interface Info {
-    address: string;
-    email: string;
-    fullName: string;
-    mobilePhone: string;
-    idUbigeo: string;
-    zipCode: string;
-    identityNumber: string;
+    address: string | null;
+    email: string | null;
+    fullName: string | null;
+    mobilePhone: string | null;
+    idUbigeo: string | null;
+    zipCode: string | null;
+    identityNumber: string | null;
 }
 
 export interface ExportConfig<T> {
@@ -64,8 +63,12 @@ export type CampoExtractor<T> = (item: T) => string | number | boolean | undefin
 
 export interface ExcelValidacionExportParcelDeclare {
     idTestCase: string
-    statusEsperado?: string
-    statusObtenido?: string
-    correcto: boolean
-    mensajeErrorObtenido?: string
+    statusEsperado: number
+    statusObtenido: number
+    statusCorrecto: boolean
+    bodyResponseEsperado: string
+    bodyResponseObtenido: string
+    bodyResponseEsperadoCorrecto: boolean
+    mensajeErrorObtenido: string
+    wayBillNo: string
 }
