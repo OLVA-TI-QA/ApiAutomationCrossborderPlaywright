@@ -78,3 +78,30 @@ export interface ExcelValidacionExportParcelDeclare {
     mensajeErrorObtenido: string
     wayBillNo: string
 }
+
+export interface LastMileRequestBody {
+    fullName: string | null;
+    address: string | null;
+    email: string | null;
+    mobilePhone: string | null;
+    idUbigeo: string | null;
+    zipCode: string | null;
+}
+
+export interface ManifestDeclareRequestBody {
+    masterAirWayBill: string | null;
+    flightNumber: string | null;
+    declareCountry: string | null;
+    etd: string | null;
+    eta: string | null;
+    fromPortCode: string | null;
+    toPortCode: string | null;
+    virTotalCount: string | null;
+    groosWeight: string | null;
+    paqueteInfo: string | null;
+    parcelList: ParcelList[] | null;
+}
+
+export interface ParcelList {
+    wayBillNo: string | null;
+}
