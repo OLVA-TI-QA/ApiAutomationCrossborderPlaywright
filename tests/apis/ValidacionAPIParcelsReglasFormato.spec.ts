@@ -166,11 +166,20 @@ test.describe('Pruebas de la API de WhatsApp con Excel', () => {
                 // Función para normalizar el orden de arrays y objetos para comparación
                 const normalizeForComparison = (obj: any): string => {
                     if (Array.isArray(obj)) {
-                        // Ordenar arrays por el campo 'message' si existe, sino por string representation
+                        // Ordenar arrays por field primero, luego por message
                         const sorted = obj.sort((a, b) => {
+                            // Si ambos tienen field, ordenar por field primero
+                            if (a.field && b.field) {
+                                const fieldComparison = a.field.localeCompare(b.field)
+                                if (fieldComparison !== 0) {
+                                    return fieldComparison
+                                }
+                            }
+                            // Si field es igual o no existe, ordenar por message
                             if (a.message && b.message) {
                                 return a.message.localeCompare(b.message)
                             }
+                            // Fallback: comparar por representación JSON completa
                             return JSON.stringify(a).localeCompare(JSON.stringify(b))
                         })
                         return JSON.stringify(sorted)

@@ -1,7 +1,10 @@
 import { request, APIRequestContext } from '@playwright/test'
 import { environment } from '@config/environment'
 import parcelDeclareRequest from '@/testData/archivosJson/parcelDeclareRequest.json'
-import { ParcelDeclareRequestBody } from '@/types/Interfaces'
+import parcelDeclareRequest200Items from '@/testData/archivosJson/Parcel_items_200.json'
+import parcelDeclareRequest201Items from '@/testData/archivosJson/Parcel_items_201.json'
+import parcelDeclareRequest1Items from '@/testData/archivosJson/Parcel_items_1.json'
+import { ParcelDeclareRequestBody, testType } from '@/types/Interfaces'
 // import { CrearEnvioBody } from '@/types/crearEnvioInterfaces'
 
 export class CrossBorderRest {
@@ -42,11 +45,9 @@ export class CrossBorderRest {
     }
 
     public async postCrearParcel(wayBillNo: string, token?: string) {
+        console.log(`wayBillNo generado: ${wayBillNo}`)
         // Clonar el JSON para evitar mutaciones globales
-        const body = { ...parcelDeclareRequest }
-
-        // Sobrescribir solo los campos necesarios
-        body.wayBillNo = wayBillNo
+        const body = { ...parcelDeclareRequest, wayBillNo }
 
         const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
             headers: {
@@ -72,8 +73,6 @@ export class CrossBorderRest {
             data: body
         })
 
-
-
         //Log response details for debugging
         if (!getResponse.ok()) {
             const errorBody = await getResponse.text()
@@ -90,6 +89,31 @@ export class CrossBorderRest {
                 Authorization: `Bearer ${token}`
             },
             data: bodyRequest
+        })
+
+        //Log response details for debugging
+        if (!getResponse.ok()) {
+            const errorBody = await getResponse.text()
+            console.log('Error response:', errorBody)
+        }
+
+        return getResponse
+    }
+
+    public async postCrearParcel200Items(testTypes: testType, wayBillNo: string, token?: string) {
+        console.log(`wayBillNo generado: ${wayBillNo}`)
+
+        const body = (testTypes === testType.doscientosItemsList) ?
+            { ...parcelDeclareRequest200Items, wayBillNo } :
+            (testTypes === testType.doscientosUnoItemsList) ?
+                { ...parcelDeclareRequest201Items, wayBillNo } :
+                { ...parcelDeclareRequest1Items, wayBillNo }
+
+        const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: body
         })
 
         //Log response details for debugging

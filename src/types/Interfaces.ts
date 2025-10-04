@@ -10,6 +10,12 @@ export enum tokenType {
     TokenInvalido = 'eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE3NTkzNzY0NTYsIm5vbWJyZSI6IjExOTYzNjgifQ.hvZQHHnhfLx5G0bz0S2UsmWnTvL7mntyqWEMm1JTtq21mVs-lAkrtnyC-I4hOIx_testitotestitotestitotestito'
 }
 
+export enum testType {
+    doscientosItemsList,
+    doscientosUnoItemsList,
+    UnItemsList
+}
+
 export interface ParcelDeclareRequestBody {
     countryManufacture: string | null;
     logisticsCode: string | null;

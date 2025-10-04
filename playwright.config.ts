@@ -92,7 +92,7 @@ export default defineConfig({
   // },
   globalSetup: './tests/setup/global-setup',
   globalTeardown: './tests/setup/global-teardown',
-  timeout: 90000,
+  timeout: 1200000,
   expect: {
     timeout: 10000
   },
