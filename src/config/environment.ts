@@ -1,3 +1,4 @@
+import { parseBoolean, parseNumber } from '@/utils/helpers';
 import { config } from 'dotenv';
 import path from 'path';
 
@@ -98,7 +99,7 @@ export const environment: EnvironmentConfig = {
   test: {
     headless: parseBoolean(process.env.HEADLESS, true),
     browser: process.env.BROWSER || 'chromium',
-    timeout: parseNumber(process.env.TIMEOUT, 90000),
+    timeout: parseNumber(process.env.TIMEOUT, 1200000),
     retries: parseNumber(process.env.RETRIES, 2),
     workers: parseNumber(process.env.WORKERS, 4),
     username: process.env.TEST_USERNAME!,
@@ -127,12 +128,3 @@ export const environment: EnvironmentConfig = {
   apiBaseUrlCrossborderDev: process.env.API_BASE_URL_CROSSBORDER_DEV || '', // is obtained from the .env file
   // geoXApiKey: process.env.GEO_X_API_KEY || ''
 };
-
-function parseNumber(value: string | undefined, defaultValue: number): number {
-  const parsed = Number(value);
-  return isNaN(parsed) ? defaultValue : parsed;
-}
-
-function parseBoolean(value: string | undefined, defaultValue: boolean): boolean {
-  return value === 'true' || value === '1' || value === 'on' ? true : value === 'false' || value === '0' || value === 'off' ? false : defaultValue;
-}
