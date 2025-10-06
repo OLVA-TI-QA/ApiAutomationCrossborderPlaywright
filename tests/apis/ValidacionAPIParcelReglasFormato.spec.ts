@@ -4,7 +4,7 @@ import { exportarResultadosGenerico, generateRandomAWB, leerDatosDesdeExcel } fr
 import { ExcelValidacionExportParcelDeclare, ParcelDeclareRequestBody, tokenType } from '@/types/Interfaces'
 import { CrossBorderRest } from '@/apiProviders/crossborderRest'
 
-test.describe('Pruebas de la API de WhatsApp con Excel', () => {
+test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
     let crossBorderRest: CrossBorderRest
 
     // Ruta y nombre de la hoja de Excel

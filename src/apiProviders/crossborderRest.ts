@@ -4,7 +4,9 @@ import parcelDeclareRequest from '@/testData/archivosJson/parcelDeclareRequest.j
 import parcelDeclareRequest200Items from '@/testData/archivosJson/Parcel_items_200.json'
 import parcelDeclareRequest201Items from '@/testData/archivosJson/Parcel_items_201.json'
 import parcelDeclareRequest1Items from '@/testData/archivosJson/Parcel_items_1.json'
-import { ParcelDeclareRequestBody, testType } from '@/types/Interfaces'
+import lasmileRequest from '@/testData/archivosJson/lasmileRequest.json'
+import manifestRequest from '@/testData/archivosJson/manifestRequest.json'
+import { LastMileRequestBody, ManifestDeclareRequestBody, ParcelDeclareRequestBody, testType } from '@/types/Interfaces'
 // import { CrearEnvioBody } from '@/types/crearEnvioInterfaces'
 
 export class CrossBorderRest {
@@ -83,7 +85,6 @@ export class CrossBorderRest {
     }
 
     public async postCrearParcelMasivo(token: string, bodyRequest: ParcelDeclareRequestBody) {
-        // console.log('Body request:', bodyRequest)
         const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -125,12 +126,106 @@ export class CrossBorderRest {
         return getResponse
     }
 
-    // public async postCrearMultiplesEnvios(token: string, listaDeEnvios: CrearEnvioBody[]) {
-    //     return await this.baseUrl!.post('/envioRest/webresources/envio/crear', {
-    //         data: listaDeEnvios,
-    //         headers: {
-    //             Authorization: `Bearer ${token}`
-    //         }
-    //     })
-    // }
+    public async patchParcelLastMile(wayBillNo: string, token?: string) {
+        console.log(`wayBillNo generado: ${wayBillNo}`)
+
+        const getResponse = await this.baseUrl!.patch(`/crossborder-hub/api/parcels/${wayBillNo}/lastMile`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: lasmileRequest
+        })
+
+        //Log response details for debugging
+        if (!getResponse.ok()) {
+            const errorBody = await getResponse.text()
+            console.log('Error response:', errorBody)
+        }
+
+        return getResponse
+    }
+
+    public async patchParcelLastMileSinToken(wayBillNo: string) {
+
+        const getResponse = await this.baseUrl!.patch(`/crossborder-hub/api/parcels/${wayBillNo}/lastMile`, {
+            data: lasmileRequest
+        })
+
+        //Log response details for debugging
+        if (!getResponse.ok()) {
+            const errorBody = await getResponse.text()
+            console.log('Error response:', errorBody)
+        }
+
+        return getResponse
+    }
+
+    public async patchLastMileMasivo(token: string, bodyRequest: LastMileRequestBody, wayBillNo?: string) {
+        console.log(`wayBillNo generado: ${wayBillNo}`)
+
+        const getResponse = await this.baseUrl!.patch(`/crossborder-hub/api/parcels/${wayBillNo}/lastMile`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: bodyRequest
+        })
+
+        //Log response details for debugging
+        if (!getResponse.ok()) {
+            const errorBody = await getResponse.text()
+            console.log('Error response:', errorBody)
+        }
+
+        return getResponse
+    }
+
+    public async postManifest(token?: string) {
+        const getResponse = await this.baseUrl!.post('/crossborder-hub/api/manifests', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: manifestRequest
+        })
+
+        //Log response details for debugging
+        if (!getResponse.ok()) {
+            const errorBody = await getResponse.text()
+            console.log('Error response:', errorBody)
+        }
+
+        return getResponse
+    }
+
+    public async postManifestSinToken() {
+
+        const getResponse = await this.baseUrl!.post('/crossborder-hub/api/manifests', {
+            data: manifestRequest
+        })
+
+        //Log response details for debugging
+        if (!getResponse.ok()) {
+            const errorBody = await getResponse.text()
+            console.log('Error response:', errorBody)
+        }
+
+        return getResponse
+    }
+
+    public async postManifestMasivo(token: string, bodyRequest: ManifestDeclareRequestBody) {
+
+        const getResponse = await this.baseUrl!.patch('/crossborder-hub/api/manifests', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: bodyRequest
+        })
+
+        //Log response details for debugging
+        if (!getResponse.ok()) {
+            const errorBody = await getResponse.text()
+            console.log('Error response:', errorBody)
+        }
+
+        return getResponse
+    }
 }
