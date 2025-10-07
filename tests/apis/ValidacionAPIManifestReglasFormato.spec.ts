@@ -32,7 +32,13 @@ test.describe('Pruebas de la API de Manifest Declare con Excel', () => {
 
         const resultadosValidacion: ExcelValidacionExportParcelDeclare[] = []
 
+        // Medir tiempo de respuesta del token
+        const tiempoInicioToken = performance.now()
         const getTokenResponse = await crossBorderRest.postToken(tokenType.Eduardo)
+        const tiempoFinToken = performance.now()
+        const tiempoRespuestaTokenMs = tiempoFinToken - tiempoInicioToken
+        const tiempoRespuestaToken = tiempoRespuestaTokenMs / 1000 // Convertir a segundos
+        console.log(`⏱️  Tiempo de respuesta del token: ${tiempoRespuestaToken.toFixed(3)}s (${tiempoRespuestaTokenMs.toFixed(2)}ms)`)
 
         expect(getTokenResponse.status()).toBe(200)
         expect(getTokenResponse.json()).resolves.toMatchObject({
@@ -99,17 +105,22 @@ test.describe('Pruebas de la API de Manifest Declare con Excel', () => {
 
                 console.log(`Preparando solicitud para testcase: ${idTestCase}`)
 
+                // Medir tiempo de respuesta del Manifest
+                const tiempoInicioManifest = performance.now()
                 const response = await crossBorderRest.postManifestMasivo(token, body)
+                const tiempoFinManifest = performance.now()
+                const tiempoRespuestaManifestMs = tiempoFinManifest - tiempoInicioManifest
+                const tiempoRespuestaManifest = tiempoRespuestaManifestMs / 1000 // Convertir a segundos
 
                 // Retornamos la respuesta y algunos datos adicionales para la validación
-                return { response, idTestCase, statusEsperado, bodyResponseEsperado, masterAirWayBill }
+                return { response, idTestCase, statusEsperado, bodyResponseEsperado, masterAirWayBill, tiempoRespuestaManifest }
             })
 
             // Ejecutar todas las promesas del lote en paralelo y esperar a que terminen
             const responsesInBatch = await Promise.all(requestsToSendForBatch)
 
             // 3. Procesar y validar cada respuesta del lote
-            for (const { response, idTestCase, statusEsperado, bodyResponseEsperado, masterAirWayBill } of responsesInBatch) {
+            for (const { response, idTestCase, statusEsperado, bodyResponseEsperado, masterAirWayBill, tiempoRespuestaManifest } of responsesInBatch) {
                 const bodyResponse = await response.json()
 
                 console.log(`Response for testcase ${idTestCase}:`, bodyResponse)
@@ -208,10 +219,14 @@ test.describe('Pruebas de la API de Manifest Declare con Excel', () => {
                     bodyResponseObtenido: JSON.stringify(bodyResponse),
                     bodyResponseEsperadoCorrecto: bodyResponseEsperadoCorrecto,
                     mensajeErrorObtenido: mensajeErrorObtenido,
-                    wayBillNo: masterAirWayBillEnviado
+                    wayBillNo: masterAirWayBillEnviado,
+                    tiempoRespuestaToken: tiempoRespuestaToken,
+                    tiempoRespuestaParcel: tiempoRespuestaManifest
                 })
 
-                console.log(`✅ Fila procesada: ID testcase ${idTestCase} - Status Correcto?: ${statusCorrecto} - Body Response Correcto?: ${bodyResponseEsperadoCorrecto}'`)
+                console.log(
+                    `✅ Fila procesada: ID testcase ${idTestCase} - Status Correcto?: ${statusCorrecto} - Body Response Correcto?: ${bodyResponseEsperadoCorrecto} - Tiempo Token: ${tiempoRespuestaToken.toFixed(3)}s - Tiempo Manifest: ${tiempoRespuestaManifest.toFixed(3)}s`
+                )
             }
         } // Fin del bucle de lotes
 
@@ -247,7 +262,9 @@ test.describe('Pruebas de la API de Manifest Declare con Excel', () => {
                 'BODY RESPONSE OBTENIDO',
                 'EL BODY RESPONSE ES CORRECTO?',
                 'MENSAJE OBTENIDO',
-                'MASTERAIRWAYBILL ENVIADO'
+                'MASTERAIRWAYBILL ENVIADO',
+                'TIEMPO RESPUESTA TOKEN (s)',
+                'TIEMPO RESPUESTA MANIFEST (s)'
             ],
             extraerCampos: [
                 (r) => r.idTestCase,
@@ -258,7 +275,9 @@ test.describe('Pruebas de la API de Manifest Declare con Excel', () => {
                 (r) => r.bodyResponseObtenido,
                 (r) => (r.bodyResponseEsperadoCorrecto ? 'Sí' : 'No'),
                 (r) => r.mensajeErrorObtenido,
-                (r) => r.wayBillNo
+                (r) => r.wayBillNo,
+                (r) => r.tiempoRespuestaToken ?? 0,
+                (r) => r.tiempoRespuestaParcel ?? 0
             ]
         })
 
