@@ -32,7 +32,13 @@ test.describe('Pruebas de la API de LastMile con Excel', () => {
 
         const resultadosValidacion: ExcelValidacionExportParcelDeclare[] = []
 
+        // Medir tiempo de respuesta del token
+        const tiempoInicioToken = performance.now()
         const getTokenResponse = await crossBorderRest.postToken(tokenType.Eduardo)
+        const tiempoFinToken = performance.now()
+        const tiempoRespuestaTokenMs = tiempoFinToken - tiempoInicioToken
+        const tiempoRespuestaToken = tiempoRespuestaTokenMs / 1000 // Convertir a segundos
+        console.log(`⏱️  Tiempo de respuesta del token: ${tiempoRespuestaToken.toFixed(3)}s (${tiempoRespuestaTokenMs.toFixed(2)}ms)`)
 
         expect(getTokenResponse.status()).toBe(200)
         expect(getTokenResponse.json()).resolves.toMatchObject({
@@ -78,17 +84,22 @@ test.describe('Pruebas de la API de LastMile con Excel', () => {
 
                 console.log(`Preparando solicitud para testcase: ${idTestCase}`)
 
+                // Medir tiempo de respuesta del LastMile
+                const tiempoInicioLastMile = performance.now()
                 const response = await crossBorderRest.patchLastMileMasivo(token, body, wayBillNo)
+                const tiempoFinLastMile = performance.now()
+                const tiempoRespuestaLastMileMs = tiempoFinLastMile - tiempoInicioLastMile
+                const tiempoRespuestaLastMile = tiempoRespuestaLastMileMs / 1000 // Convertir a segundos
 
                 // Retornamos la respuesta y algunos datos adicionales para la validación
-                return { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo }
+                return { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo, tiempoRespuestaLastMile }
             })
 
             // Ejecutar todas las promesas del lote en paralelo y esperar a que terminen
             const responsesInBatch = await Promise.all(requestsToSendForBatch)
 
             // 3. Procesar y validar cada respuesta del lote
-            for (const { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo } of responsesInBatch) {
+            for (const { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo, tiempoRespuestaLastMile } of responsesInBatch) {
                 const bodyResponse = await response.json()
 
                 console.log(`Response for testcase ${idTestCase}:`, bodyResponse)
@@ -187,10 +198,14 @@ test.describe('Pruebas de la API de LastMile con Excel', () => {
                     bodyResponseObtenido: JSON.stringify(bodyResponse),
                     bodyResponseEsperadoCorrecto: bodyResponseEsperadoCorrecto,
                     mensajeErrorObtenido: mensajeErrorObtenido,
-                    wayBillNo: wayBillNoObtenido
+                    wayBillNo: wayBillNoObtenido,
+                    tiempoRespuestaToken: tiempoRespuestaToken,
+                    tiempoRespuestaParcel: tiempoRespuestaLastMile
                 })
 
-                console.log(`✅ Fila procesada: ID testcase ${idTestCase} - Status Correcto?: ${statusCorrecto} - Body Response Correcto?: ${bodyResponseEsperadoCorrecto}'`)
+                console.log(
+                    `✅ Fila procesada: ID testcase ${idTestCase} - Status Correcto?: ${statusCorrecto} - Body Response Correcto?: ${bodyResponseEsperadoCorrecto} - Tiempo Token: ${tiempoRespuestaToken.toFixed(3)}s - Tiempo LastMile: ${tiempoRespuestaLastMile.toFixed(3)}s`
+                )
             }
         } // Fin del bucle de lotes
 
@@ -226,7 +241,9 @@ test.describe('Pruebas de la API de LastMile con Excel', () => {
                 'BODY RESPONSE OBTENIDO',
                 'EL BODY RESPONSE ES CORRECTO?',
                 'MENSAJE OBTENIDO',
-                'PARCEL EDITADO'
+                'PARCEL EDITADO',
+                'TIEMPO RESPUESTA TOKEN (s)',
+                'TIEMPO RESPUESTA LASTMILE (s)'
             ],
             extraerCampos: [
                 (r) => r.idTestCase,
@@ -237,7 +254,9 @@ test.describe('Pruebas de la API de LastMile con Excel', () => {
                 (r) => r.bodyResponseObtenido,
                 (r) => (r.bodyResponseEsperadoCorrecto ? 'Sí' : 'No'),
                 (r) => r.mensajeErrorObtenido,
-                (r) => r.wayBillNo
+                (r) => r.wayBillNo,
+                (r) => r.tiempoRespuestaToken ?? 0,
+                (r) => r.tiempoRespuestaParcel ?? 0
             ]
         })
 

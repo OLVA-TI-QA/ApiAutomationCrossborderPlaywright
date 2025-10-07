@@ -77,6 +77,8 @@ export interface ExcelValidacionExportParcelDeclare {
     bodyResponseEsperadoCorrecto: boolean
     mensajeErrorObtenido: string
     wayBillNo: string
+    tiempoRespuestaToken?: number  // Tiempo en segundos
+    tiempoRespuestaParcel?: number // Tiempo en segundos
 }
 
 export interface LastMileRequestBody {

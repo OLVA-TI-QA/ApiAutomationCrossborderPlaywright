@@ -32,7 +32,13 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
 
         const resultadosValidacion: ExcelValidacionExportParcelDeclare[] = []
 
+        // Medir tiempo de respuesta del token
+        const tiempoInicioToken = performance.now()
         const getTokenResponse = await crossBorderRest.postToken(tokenType.Eduardo)
+        const tiempoFinToken = performance.now()
+        const tiempoRespuestaTokenMs = tiempoFinToken - tiempoInicioToken
+        const tiempoRespuestaToken = tiempoRespuestaTokenMs / 1000 // Convertir a segundos
+        console.log(`⏱️  Tiempo de respuesta del token: ${tiempoRespuestaToken.toFixed(3)}s (${tiempoRespuestaTokenMs.toFixed(2)}ms)`)
 
         expect(getTokenResponse.status()).toBe(200)
         expect(getTokenResponse.json()).resolves.toMatchObject({
@@ -148,17 +154,22 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
 
                 console.log(`Preparando solicitud para testcase: ${idTestCase}`)
 
+                // Medir tiempo de respuesta del parcel
+                const tiempoInicioParcel = performance.now()
                 const response = await crossBorderRest.postCrearParcelMasivo(token, body)
+                const tiempoFinParcel = performance.now()
+                const tiempoRespuestaParcelMs = tiempoFinParcel - tiempoInicioParcel
+                const tiempoRespuestaParcel = tiempoRespuestaParcelMs / 1000 // Convertir a segundos
 
                 // Retornamos la respuesta y algunos datos adicionales para la validación
-                return { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo }
+                return { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo, tiempoRespuestaParcel }
             })
 
             // Ejecutar todas las promesas del lote en paralelo y esperar a que terminen
             const responsesInBatch = await Promise.all(requestsToSendForBatch)
 
             // 3. Procesar y validar cada respuesta del lote
-            for (const { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo } of responsesInBatch) {
+            for (const { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo, tiempoRespuestaParcel } of responsesInBatch) {
                 const bodyResponse = await response.json()
 
                 console.log(`Response for testcase ${idTestCase}:`, bodyResponse)
@@ -218,16 +229,6 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                             mensajeErrorObtenido = bodyResponse.message
                             wayBillNoObtenido = wayBillNo ?? 'No se creo Parcel'
                             break
-                        case 400:
-                            if (normalizeForComparison(bodyResponse) === normalizeForComparison(JSON.parse(bodyResponseEsperado))) {
-                                bodyResponseEsperadoCorrecto = true
-                            } else {
-                                bodyResponseEsperadoCorrecto = false
-                            }
-
-                            mensajeErrorObtenido = bodyResponse.message
-                            wayBillNoObtenido = 'No se creo Parcel'
-                            break
                         default:
                             if (normalizeForComparison(bodyResponse) === normalizeForComparison(JSON.parse(bodyResponseEsperado))) {
                                 bodyResponseEsperadoCorrecto = true
@@ -257,10 +258,14 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                     bodyResponseObtenido: JSON.stringify(bodyResponse),
                     bodyResponseEsperadoCorrecto: bodyResponseEsperadoCorrecto,
                     mensajeErrorObtenido: mensajeErrorObtenido,
-                    wayBillNo: wayBillNoObtenido
+                    wayBillNo: wayBillNoObtenido,
+                    tiempoRespuestaToken: tiempoRespuestaToken,
+                    tiempoRespuestaParcel: tiempoRespuestaParcel
                 })
 
-                console.log(`✅ Fila procesada: ID testcase ${idTestCase} - Status Correcto?: ${statusCorrecto} - Body Response Correcto?: ${bodyResponseEsperadoCorrecto}'`)
+                console.log(
+                    `✅ Fila procesada: ID testcase ${idTestCase} - Status Correcto?: ${statusCorrecto} - Body Response Correcto?: ${bodyResponseEsperadoCorrecto} - Tiempo Token: ${tiempoRespuestaToken.toFixed(3)}s - Tiempo Parcel: ${tiempoRespuestaParcel.toFixed(3)}s`
+                )
             }
         } // Fin del bucle de lotes
 
@@ -269,18 +274,15 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
         const bodyResponseEsperadoCorrecto = resultadosValidacion.filter((item) => item.bodyResponseEsperadoCorrecto === true).length
         const bodyResponseEsperadoInCorrecto = totalRegistros - bodyResponseEsperadoCorrecto
         const status400Obtenidos = resultadosValidacion.filter((item) => item.statusObtenido === 400).length
-        const status422Obtenidos = resultadosValidacion.filter((item) => item.statusObtenido === 422).length
-        const status201Obtenidos = totalRegistros - status400Obtenidos - status422Obtenidos
+        const status201Obtenidos = totalRegistros - status400Obtenidos
         const status400Esperados = resultadosValidacion.filter((item) => item.statusEsperado === 400).length
-        const status422Esperados = resultadosValidacion.filter((item) => item.statusEsperado === 422).length
-        const status201Esperados = totalRegistros - status400Esperados - status422Esperados
+        const status201Esperados = totalRegistros - status400Esperados
 
         console.log('---')
         console.log(`📊 Resumen de la prueba:`)
         console.log(`- ${totalRegistros} registros procesados.`)
         console.log(`- ${bodyResponseEsperadoInCorrecto} body response con error (error: false).`)
         console.log(`- ${status400Obtenidos} status 400 obtenidos.`)
-        console.log(`- ${status422Obtenidos} status 422 obtenidos.`)
         console.log(`- ${status201Obtenidos} status 201 obtenidos.`)
         console.log('---')
 
@@ -296,7 +298,9 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                 'BODY RESPONSE OBTENIDO',
                 'EL BODY RESPONSE ES CORRECTO?',
                 'MENSAJE OBTENIDO',
-                'PARCEL CREADO'
+                'PARCEL CREADO',
+                'TIEMPO RESPUESTA TOKEN (s)',
+                'TIEMPO RESPUESTA PARCEL (s)'
             ],
             extraerCampos: [
                 (r) => r.idTestCase,
@@ -307,13 +311,15 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                 (r) => r.bodyResponseObtenido,
                 (r) => (r.bodyResponseEsperadoCorrecto ? 'Sí' : 'No'),
                 (r) => r.mensajeErrorObtenido,
-                (r) => r.wayBillNo
+                (r) => r.wayBillNo,
+                (r) => r.tiempoRespuestaToken ?? 0,
+                (r) => r.tiempoRespuestaParcel ?? 0
             ]
         })
 
         // expect(totalRegistros).toBe(bodyResponseEsperadoCorrecto) // Validación de la cantidad de request enviados comparados entre su body response
         expect(status400Obtenidos).toBe(status400Esperados) // Validación de la cantidad de status 400 comparados entre los esperados y obtenidos
         expect(status201Obtenidos).toBe(status201Esperados) // Validación de la cantidad de status 201 comparados entre los esperados y obtenidos
-        expect(status422Obtenidos).toBe(status422Esperados) // Validación de la cantidad de status 422 comparados entre los esperados y obtenidos
+        expect(totalRegistros).toBe(bodyResponseEsperadoCorrecto) // Validación de la cantidad de status 422 comparados entre los esperados y obtenidos
     })
 })
