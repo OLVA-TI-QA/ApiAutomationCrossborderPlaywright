@@ -13,7 +13,8 @@ export enum tokenType {
 export enum testType {
     doscientosItemsList,
     doscientosUnoItemsList,
-    UnItemsList
+    UnItemsList,
+    CeroItemsList
 }
 
 export interface ParcelDeclareRequestBody {

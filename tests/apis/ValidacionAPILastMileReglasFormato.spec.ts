@@ -8,7 +8,7 @@ test.describe('Pruebas de la API de LastMile con Excel', () => {
     let crossBorderRest: CrossBorderRest
 
     // Ruta y nombre de la hoja de Excel
-    const excelPath = './src/testData/archivosExcel/LastMileRequest.xlsx'
+    const excelPath = './src/testData/archivosExcel/LastmileDeclareRequest.xlsx'
     const sheetName = 'BodyRequest'
 
     // Define el tamaño de cada lote de peticiones
@@ -159,16 +159,6 @@ test.describe('Pruebas de la API de LastMile con Excel', () => {
                             mensajeErrorObtenido = bodyResponse.message
                             wayBillNoObtenido = wayBillNo ?? 'No se creo Parcel'
                             break
-                        case 400:
-                            if (normalizeForComparison(bodyResponse) === normalizeForComparison(JSON.parse(bodyResponseEsperado))) {
-                                bodyResponseEsperadoCorrecto = true
-                            } else {
-                                bodyResponseEsperadoCorrecto = false
-                            }
-
-                            mensajeErrorObtenido = bodyResponse.message
-                            wayBillNoObtenido = 'No se creo Parcel'
-                            break
                         default:
                             if (normalizeForComparison(bodyResponse) === normalizeForComparison(JSON.parse(bodyResponseEsperado))) {
                                 bodyResponseEsperadoCorrecto = true
@@ -181,7 +171,7 @@ test.describe('Pruebas de la API de LastMile con Excel', () => {
                             break
                     }
                 } else {
-                    // Si el status no es 200, asumimos que hay un error
+                    // Si el status no es 202, asumimos que hay un error
                     statusCorrecto = false
                     bodyResponseEsperadoCorrecto = false
                     mensajeErrorObtenido = bodyResponse.message
@@ -214,24 +204,21 @@ test.describe('Pruebas de la API de LastMile con Excel', () => {
         const bodyResponseEsperadoCorrecto = resultadosValidacion.filter((item) => item.bodyResponseEsperadoCorrecto === true).length
         const bodyResponseEsperadoInCorrecto = totalRegistros - bodyResponseEsperadoCorrecto
         const status400Obtenidos = resultadosValidacion.filter((item) => item.statusObtenido === 400).length
-        const status422Obtenidos = resultadosValidacion.filter((item) => item.statusObtenido === 422).length
-        const status202Obtenidos = totalRegistros - status400Obtenidos - status422Obtenidos
+        const status202Obtenidos = totalRegistros - status400Obtenidos
         const status400Esperados = resultadosValidacion.filter((item) => item.statusEsperado === 400).length
-        const status422Esperados = resultadosValidacion.filter((item) => item.statusEsperado === 422).length
-        const status202Esperados = totalRegistros - status400Esperados - status422Esperados
+        const status202Esperados = totalRegistros - status400Esperados
 
         console.log('---')
         console.log(`📊 Resumen de la prueba:`)
         console.log(`- ${totalRegistros} registros procesados.`)
         console.log(`- ${bodyResponseEsperadoInCorrecto} body response con error (error: false).`)
         console.log(`- ${status400Obtenidos} status 400 obtenidos.`)
-        console.log(`- ${status422Obtenidos} status 422 obtenidos.`)
         console.log(`- ${status202Obtenidos} status 202 obtenidos.`)
         console.log('---')
 
         exportarResultadosGenerico<ExcelValidacionExportParcelDeclare>({
             data: resultadosValidacion,
-            nombreBase: 'resultados_validacion_estructura_body_request_parcel',
+            nombreBase: 'resultados_validacion_estructura_body_request_lastMile',
             headers: [
                 'ID TESTCASE',
                 'STATUS ESPERADO',
@@ -263,6 +250,6 @@ test.describe('Pruebas de la API de LastMile con Excel', () => {
         // expect(totalRegistros).toBe(bodyResponseEsperadoCorrecto) // Validación de la cantidad de request enviados comparados entre su body response
         expect(status400Obtenidos).toBe(status400Esperados) // Validación de la cantidad de status 400 comparados entre los esperados y obtenidos
         expect(status202Obtenidos).toBe(status202Esperados) // Validación de la cantidad de status 201 comparados entre los esperados y obtenidos
-        expect(status422Obtenidos).toBe(status422Esperados) // Validación de la cantidad de status 422 comparados entre los esperados y obtenidos
+        expect(totalRegistros).toBe(bodyResponseEsperadoCorrecto) // Validación de la cantidad de status 422 comparados entre los esperados y obtenidos
     })
 })
