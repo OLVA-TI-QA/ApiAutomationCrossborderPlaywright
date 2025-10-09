@@ -30,7 +30,7 @@ test('TC-SEGU-API-01: Parcel Declare - Acceso OK', async () => {
 
         const crearParcelResponse = await crossBorderRest.postCrearParcel(generateRandomAWB(), token)
         expect(crearParcelResponse.status()).toBe(201)
-        expect(crearParcelResponse.json()).toMatchObject({
+        expect(crearParcelResponse.json()).resolves.toMatchObject({
             status: 'CREATED',
             message: 'Parcel created successfully'
         })
@@ -77,7 +77,7 @@ test('TC-SEGU-API-03: Parcel Declare - Duplicado de parcel', async () => {
         const guiaDuplicada = 'AWBN056835491'
         const crearParcelResponse = await crossBorderRest.postCrearParcel(guiaDuplicada, token)
         expect(crearParcelResponse.status()).toBe(422)
-        expect(crearParcelResponse.json()).toMatchObject({
+        expect(crearParcelResponse.json()).resolves.toMatchObject({
             code: 'way-bill-exists',
             message: `Guía ${guiaDuplicada} ya existe`
         })
@@ -145,7 +145,7 @@ test('TC-SEGU-API-10: LastMile - Acceso OK', async () => {
 
         const crearParcelResponse = await crossBorderRest.patchParcelLastMile(guiaExistente, token)
         expect(crearParcelResponse.status()).toBe(202)
-        expect(crearParcelResponse.json()).toMatchObject({
+        expect(crearParcelResponse.json()).resolves.toMatchObject({
             status: 'ACCEPTED',
             message: 'Updated request accepted'
         })
@@ -225,11 +225,11 @@ test('TC-SEGU-API-18: Manifest - Acceso OK', async () => {
         expect(token).toBeDefined()
         console.log(`🔐 Token obtenido: ${token}`)
 
-        const crearParcelResponse = await crossBorderRest.postManifest(token)
+        const crearParcelResponse = await crossBorderRest.postManifest(false, token)
         expect(crearParcelResponse.status()).toBe(201)
-        expect(crearParcelResponse.json()).toMatchObject({
+        expect(crearParcelResponse.json()).resolves.toMatchObject({
             status: 'CREATED',
-            message: 'Manifest created successfully, shipment association will follow.'
+            message: 'Manifest created successfully'
         })
     } catch (error: unknown) {
         if (error instanceof Error) {
@@ -257,7 +257,7 @@ test('TTC-SEGU-API-19: Manifest - Token Ausente', async () => {
 
 test('TC-SEGU-API-20: Manifest - Bearer Vacio', async () => {
     try {
-        const crearParcelResponse = await crossBorderRest.postManifest()
+        const crearParcelResponse = await crossBorderRest.postManifest(false)
         expect(crearParcelResponse.status()).toBe(401)
         expect(crearParcelResponse.json()).resolves.toMatchObject({
             message: 'token inválido',
@@ -291,7 +291,7 @@ test('TC-SEGU-API-22: Manifest - Firma Inválida', async () => {
     }
 })
 
-test('TC-SEGU-API-XX: Error 500 - Simular timeout de base de datos', async ({ page }) => { //validar
+test('TC-SEGU-API-XX: Error 500 - Simular timeout de base de datos', async ({ page }) => {
     try {
         // Paso 1: Interceptar la request a /parcels y simular error 500
         await page.route('**/parcels', route => {

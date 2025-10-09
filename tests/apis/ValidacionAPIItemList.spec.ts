@@ -113,3 +113,73 @@ test('TC-P-1-ITEMS: creación exitosa con el número mínimo de items en itemLis
         throw error
     }
 })
+
+test('TC-P-0-ITEMS: Error sin el número mínimo de items en itemList (0)', async () => {
+    try {
+        const getTokenResponse = await crossBorderRest.postToken(tokenType.Eduardo)
+
+        expect(getTokenResponse.status()).toBe(200)
+        expect(getTokenResponse.json()).resolves.toMatchObject({
+            access_token: expect.any(String),
+            token_type: 'Bearer'
+        })
+        console.log(getTokenResponse.json())
+
+        const authBody = await getTokenResponse.json()
+        const token = authBody.access_token
+        expect(token).toBeDefined()
+        console.log(`🔐 Token obtenido: ${token}`)
+
+        const crearParcelResponse = await crossBorderRest.postCrearParcel200Items(testType.CeroItemsList, generateRandomAWB(), token)
+        expect(crearParcelResponse.status()).toBe(400)
+
+        const responseBody = await crearParcelResponse.json()
+        expect(Array.isArray(responseBody)).toBe(true)
+        expect(responseBody[0]).toMatchObject({
+            field: 'itemList',
+            message: 'size must be between 1 and 200'
+        })
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error('Connection error:', error.message)
+        } else {
+            console.error('Unknown error:', error)
+        }
+        throw error
+    }
+})
+
+test('TC-MA-0-ITEMS: parcelList (Límite Mín.)', async () => {
+    try {
+        const getTokenResponse = await crossBorderRest.postToken(tokenType.Eduardo)
+
+        expect(getTokenResponse.status()).toBe(200)
+        expect(getTokenResponse.json()).resolves.toMatchObject({
+            access_token: expect.any(String),
+            token_type: 'Bearer'
+        })
+        console.log(getTokenResponse.json())
+
+        const authBody = await getTokenResponse.json()
+        const token = authBody.access_token
+        expect(token).toBeDefined()
+        console.log(`🔐 Token obtenido: ${token}`)
+
+        const crearParcelResponse = await crossBorderRest.postManifest(true, token)
+        expect(crearParcelResponse.status()).toBe(400)
+
+        const responseBody = await crearParcelResponse.json()
+        expect(Array.isArray(responseBody)).toBe(true)
+        expect(responseBody[0]).toMatchObject({
+            field: 'parcelList',
+            message: 'size must be between 1 and 50000'
+        })
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            console.error('Connection error:', error.message)
+        } else {
+            console.error('Unknown error:', error)
+        }
+        throw error
+    }
+})

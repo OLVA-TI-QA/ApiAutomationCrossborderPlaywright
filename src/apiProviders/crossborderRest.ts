@@ -1,9 +1,11 @@
 import { request, APIRequestContext } from '@playwright/test'
 import { environment } from '@config/environment'
 import parcelDeclareRequest from '@/testData/archivosJson/parcelDeclareRequest.json'
-import parcelDeclareRequest200Items from '@/testData/archivosJson/Parcel_items_200.json'
-import parcelDeclareRequest201Items from '@/testData/archivosJson/Parcel_items_201.json'
-import parcelDeclareRequest1Items from '@/testData/archivosJson/Parcel_items_1.json'
+import parcelDeclareRequest200Items from '@/testData/archivosJson/parcel_items_200.json'
+import parcelDeclareRequest201Items from '@/testData/archivosJson/parcel_items_201.json'
+import parcelDeclareRequest1Items from '@/testData/archivosJson/parcel_items_1.json'
+import parcelDeclareRequest0Items from '@/testData/archivosJson/parcel_items_0.json'
+import manifestDeclare0Items from '@/testData/archivosJson/manifestDeclare_items_0.json'
 import lasmileRequest from '@/testData/archivosJson/lasmileRequest.json'
 import manifestRequest from '@/testData/archivosJson/manifestRequest.json'
 import { LastMileRequestBody, ManifestDeclareRequestBody, ParcelDeclareRequestBody, testType } from '@/types/Interfaces'
@@ -108,7 +110,9 @@ export class CrossBorderRest {
             { ...parcelDeclareRequest200Items, wayBillNo } :
             (testTypes === testType.doscientosUnoItemsList) ?
                 { ...parcelDeclareRequest201Items, wayBillNo } :
-                { ...parcelDeclareRequest1Items, wayBillNo }
+                (testTypes === testType.UnItemsList) ?
+                    { ...parcelDeclareRequest1Items, wayBillNo } :
+                    { ...parcelDeclareRequest0Items, wayBillNo }
 
         const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
             headers: {
@@ -179,12 +183,12 @@ export class CrossBorderRest {
         return getResponse
     }
 
-    public async postManifest(token?: string) {
+    public async postManifest(sinItems: boolean, token?: string) {
         const getResponse = await this.baseUrl!.post('/crossborder-hub/api/manifests', {
             headers: {
                 Authorization: `Bearer ${token}`
             },
-            data: manifestRequest
+            data: sinItems ? manifestDeclare0Items : manifestRequest
         })
 
         //Log response details for debugging
@@ -213,7 +217,7 @@ export class CrossBorderRest {
 
     public async postManifestMasivo(token: string, bodyRequest: ManifestDeclareRequestBody) {
 
-        const getResponse = await this.baseUrl!.patch('/crossborder-hub/api/manifests', {
+        const getResponse = await this.baseUrl!.post('/crossborder-hub/api/manifests', {
             headers: {
                 Authorization: `Bearer ${token}`
             },
