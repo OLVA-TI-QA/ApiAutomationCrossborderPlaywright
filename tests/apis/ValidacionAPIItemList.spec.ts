@@ -68,7 +68,7 @@ test('TC-P-201-ITEMS: Error superando el número máximo de items en itemList (2
         expect(Array.isArray(responseBody)).toBe(true)
         expect(responseBody[0]).toMatchObject({
             field: 'itemList',
-            message: 'size must be between 1 and 200'
+            message: 'La lista debe tener entre 1 y 200 elementos'
         })
     } catch (error: unknown) {
         if (error instanceof Error) {
@@ -137,7 +137,7 @@ test('TC-P-0-ITEMS: Error sin el número mínimo de items en itemList (0)', asyn
         expect(Array.isArray(responseBody)).toBe(true)
         expect(responseBody[0]).toMatchObject({
             field: 'itemList',
-            message: 'size must be between 1 and 200'
+            message: 'La lista debe tener entre 1 y 200 elementos'
         })
     } catch (error: unknown) {
         if (error instanceof Error) {
