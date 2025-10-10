@@ -1,9 +1,18 @@
-import { parseBoolean, parseNumber } from '@/utils/helpers';
 import { config } from 'dotenv';
 import path from 'path';
 
 // Load environment variables from .env file
 config({ path: path.resolve(process.cwd(), '.env') });
+
+// Helper functions (moved here to avoid circular dependencies)
+function parseNumber(value: string | undefined, defaultValue: number): number {
+  const parsed = Number(value);
+  return isNaN(parsed) ? defaultValue : parsed;
+}
+
+function parseBoolean(value: string | undefined, defaultValue: boolean): boolean {
+  return value === 'true' || value === '1' || value === 'on' ? true : value === 'false' || value === '0' || value === 'off' ? false : defaultValue;
+}
 
 /**
  * Environment configuration interface

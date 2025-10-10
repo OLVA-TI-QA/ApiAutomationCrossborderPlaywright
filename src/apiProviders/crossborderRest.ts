@@ -1,5 +1,10 @@
 import { request, APIRequestContext } from '@playwright/test'
-import { environment } from '@config/environment'
+import { config } from 'dotenv'
+import path from 'path'
+
+// Load environment variables
+config({ path: path.resolve(process.cwd(), '.env') })
+
 import parcelDeclareRequest from '@/testData/archivosJson/parcelDeclareRequest.json'
 import parcelDeclareRequest200Items from '@/testData/archivosJson/parcel_items_200.json'
 import parcelDeclareRequest201Items from '@/testData/archivosJson/parcel_items_201.json'
@@ -19,7 +24,7 @@ export class CrossBorderRest {
             extraHTTPHeaders: {
                 'Content-Type': 'application/json'
             },
-            baseURL: environment.apiBaseUrlCrossborderDev
+            baseURL: process.env.API_BASE_URL_CROSSBORDER_DEV || ''
         })
 
         return this
