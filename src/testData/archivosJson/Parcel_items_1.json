@@ -1,5 +1,5 @@
 {
-  "countryManufacture": "PE",
+  "fromCountry": "PE",
   "logisticsCode": "PEGLOG-98XZ561234",
   "currency": "USD",
   "grossWeight": "8.120",
@@ -9,7 +9,6 @@
   "ctnNumber": "12341234123412341",
   "shipping": "35.500",
   "invoiceNumber": "1234",
-  "wayBillNo": "TIFA252605",
   "insurance": "48.75",
   "receiverInfo": {
     "address": "Jr. Los Pinos 451, Surco",
@@ -30,7 +29,9 @@
       "grossWeight": "2.055",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-001"
+      "productUrl": "https://shop.example.cn/item/LEN-001",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     }
   ]
 }

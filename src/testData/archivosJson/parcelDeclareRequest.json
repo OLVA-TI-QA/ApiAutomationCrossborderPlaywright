@@ -1,5 +1,5 @@
 {
-  "countryManufacture": "HK",
+  "fromCountry": "HK",
   "logisticsCode": "HKLOG-98XZ561234",
   "currency": "USD",
   "grossWeight": "8.120",
@@ -9,7 +9,6 @@
   "shipping": "35.500",
   "invoiceNumber": "INV-2024-001234",
   "ctnNumber": "CTN-9Z7Q-002",
-  "wayBillNo": "AWBN056835466",
   "insurance": "48.75",
   "receiverInfo": {
     "address": "Jr. Los Pinos 456, Surco",
@@ -48,7 +47,9 @@
       "grossWeight": "0.620",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/TA-P11"
+      "productUrl": "https://shop.example.cn/item/TA-P11",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -59,7 +60,9 @@
       "grossWeight": "0.300",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-20000"
+      "productUrl": "https://shop.example.cn/item/ANK-20000",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     }
   ]
 }

@@ -53,10 +53,8 @@ export class CrossBorderRest {
         return getToken
     }
 
-    public async postCrearParcel(wayBillNo: string, token?: string) {
-        console.log(`wayBillNo generado: ${wayBillNo}`)
-        // Clonar el JSON para evitar mutaciones globales
-        const body = { ...parcelDeclareRequest, wayBillNo }
+    public async postCrearParcel(token?: string) {
+        const body = parcelDeclareRequest
 
         const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
             headers: {
@@ -74,9 +72,8 @@ export class CrossBorderRest {
         return getResponse
     }
 
-    public async postCrearParcelSinToken(wayBillNo: string) {
-        // Clonar el JSON para evitar mutaciones globales
-        const body = { ...parcelDeclareRequest, wayBillNo }
+    public async postCrearParcelSinToken() {
+        const body = parcelDeclareRequest
 
         const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
             data: body
@@ -108,16 +105,14 @@ export class CrossBorderRest {
         return getResponse
     }
 
-    public async postCrearParcel200Items(testTypes: testType, wayBillNo: string, token?: string) {
-        console.log(`wayBillNo generado: ${wayBillNo}`)
-
+    public async postCrearParcel200Items(testTypes: testType, token?: string) {
         const body = (testTypes === testType.doscientosItemsList) ?
-            { ...parcelDeclareRequest200Items, wayBillNo } :
+            parcelDeclareRequest200Items :
             (testTypes === testType.doscientosUnoItemsList) ?
-                { ...parcelDeclareRequest201Items, wayBillNo } :
+                parcelDeclareRequest201Items :
                 (testTypes === testType.UnItemsList) ?
-                    { ...parcelDeclareRequest1Items, wayBillNo } :
-                    { ...parcelDeclareRequest0Items, wayBillNo }
+                    parcelDeclareRequest1Items
+                    : parcelDeclareRequest0Items
 
         const getResponse = await this.baseUrl!.post('/crossborder-hub/api/parcels', {
             headers: {

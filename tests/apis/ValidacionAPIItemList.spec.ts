@@ -1,7 +1,6 @@
 import { expect, test } from '@playwright/test'
 import { CrossBorderRest } from '@/apiProviders/crossborderRest'
 import { testType, tokenType } from '@/types/Interfaces'
-import { generateRandomAWB } from '@/utils/helpers'
 
 let crossBorderRest: CrossBorderRest
 
@@ -27,7 +26,7 @@ test('TC-P-200-ITEMS: creación exitosa con el número máximo de items en itemL
         expect(token).toBeDefined()
         console.log(`🔐 Token obtenido: ${token}`)
 
-        const crearParcelResponse = await crossBorderRest.postCrearParcel200Items(testType.doscientosItemsList, generateRandomAWB(), token)
+        const crearParcelResponse = await crossBorderRest.postCrearParcel200Items(testType.doscientosItemsList, token)
         expect(crearParcelResponse.status()).toBe(201)
 
         const responseBody = await crearParcelResponse.json()
@@ -61,7 +60,7 @@ test('TC-P-201-ITEMS: Error superando el número máximo de items en itemList (2
         expect(token).toBeDefined()
         console.log(`🔐 Token obtenido: ${token}`)
 
-        const crearParcelResponse = await crossBorderRest.postCrearParcel200Items(testType.doscientosUnoItemsList, generateRandomAWB(), token)
+        const crearParcelResponse = await crossBorderRest.postCrearParcel200Items(testType.doscientosUnoItemsList, token)
         expect(crearParcelResponse.status()).toBe(400)
 
         const responseBody = await crearParcelResponse.json()
@@ -96,7 +95,7 @@ test('TC-P-1-ITEMS: creación exitosa con el número mínimo de items en itemLis
         expect(token).toBeDefined()
         console.log(`🔐 Token obtenido: ${token}`)
 
-        const crearParcelResponse = await crossBorderRest.postCrearParcel200Items(testType.UnItemsList, generateRandomAWB(), token)
+        const crearParcelResponse = await crossBorderRest.postCrearParcel200Items(testType.UnItemsList, token)
         expect(crearParcelResponse.status()).toBe(201)
 
         const responseBody = await crearParcelResponse.json()
@@ -130,7 +129,7 @@ test('TC-P-0-ITEMS: Error sin el número mínimo de items en itemList (0)', asyn
         expect(token).toBeDefined()
         console.log(`🔐 Token obtenido: ${token}`)
 
-        const crearParcelResponse = await crossBorderRest.postCrearParcel200Items(testType.CeroItemsList, generateRandomAWB(), token)
+        const crearParcelResponse = await crossBorderRest.postCrearParcel200Items(testType.CeroItemsList, token)
         expect(crearParcelResponse.status()).toBe(400)
 
         const responseBody = await crearParcelResponse.json()
