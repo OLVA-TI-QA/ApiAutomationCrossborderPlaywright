@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 import { procesarValorCeldaExcel, validarDatosExcel } from '@/utils/validadores'
-import { exportarResultadosGenerico, generateRandomAWB, leerDatosDesdeExcel } from '@/utils/helpers'
+import { exportarResultadosGenerico, leerDatosDesdeExcel } from '@/utils/helpers'
 import { ExcelValidacionExportParcelDeclare, ParcelDeclareRequestBody, tokenType } from '@/types/Interfaces'
 import { CrossBorderRest } from '@/apiProviders/crossborderRest'
 
@@ -63,7 +63,7 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
             const requestsToSendForBatch = batch.map(async (fila: any) => {
                 // Ajusta los nombres de las columnas a como estén en tu Excel
                 const idTestCase = fila['idTestCase']
-                const countryManufacture = procesarValorCeldaExcel(fila['countryManufacture'])
+                const fromCountry = procesarValorCeldaExcel(fila['fromCountry'])
                 const logisticsCode = procesarValorCeldaExcel(fila['logisticsCode'])
                 const currency = procesarValorCeldaExcel(fila['currency'])
                 const grossWeight = procesarValorCeldaExcel(fila['grossWeight'])
@@ -73,8 +73,7 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                 const shipping = procesarValorCeldaExcel(fila['shipping'])
                 const ctnNumber = procesarValorCeldaExcel(fila['ctnNumber'])
                 const invoiceNumber = procesarValorCeldaExcel(fila['invoiceNumber'])
-                const wayBillNoValue = procesarValorCeldaExcel(fila['wayBillNo'])
-                const wayBillNo = wayBillNoValue !== null || '' ? generateRandomAWB() : wayBillNoValue
+                const wayBillNo = procesarValorCeldaExcel(fila['wayBillNo'])
                 const insurance = procesarValorCeldaExcel(fila['insurance'])
                 const receiverInfoAddress = procesarValorCeldaExcel(fila['receiverInfo-address'])
                 const receiverInfoEmail = procesarValorCeldaExcel(fila['receiverInfo-email'])
@@ -92,6 +91,8 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                 const itemListUnoBrand = procesarValorCeldaExcel(fila['itemList-uno-brand'])
                 const itemListUnoModel = procesarValorCeldaExcel(fila['itemList-uno-model'])
                 const itemListUnoProductUrl = procesarValorCeldaExcel(fila['itemList-uno-productUrl'])
+                const itemListUnoCountryManufacture = procesarValorCeldaExcel(fila['itemList-uno-countryManufacture'])
+                const itemListUnoGoodsCondition = procesarValorCeldaExcel(fila['itemList-uno-goodsCondition'])
                 const itemListDosCurrency = procesarValorCeldaExcel(fila['itemList-dos-currency'])
                 const itemListDosItemSequenceNumber = procesarValorCeldaExcel(fila['itemList-dos-itemSequenceNumber'])
                 const itemListDosDescriptionGoods = procesarValorCeldaExcel(fila['itemList-dos-descriptionGoods'])
@@ -101,11 +102,13 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                 const itemListDosBrand = procesarValorCeldaExcel(fila['itemList-dos-brand'])
                 const itemListDosModel = procesarValorCeldaExcel(fila['itemList-dos-model'])
                 const itemListDosProductUrl = procesarValorCeldaExcel(fila['itemList-dos-productUrl'])
+                const itemListDosCountryManufacture = procesarValorCeldaExcel(fila['itemList-dos-countryManufacture'])
+                const itemListDosGoodsCondition = procesarValorCeldaExcel(fila['itemList-dos-goodsCondition'])
                 const statusEsperado = fila['status']
                 const bodyResponseEsperado = fila['bodyResponse']
 
                 const body: ParcelDeclareRequestBody = {
-                    countryManufacture,
+                    fromCountry,
                     logisticsCode,
                     currency,
                     grossWeight,
@@ -136,7 +139,9 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                             grossWeight: itemListUnoGrossWeight,
                             brand: itemListUnoBrand,
                             model: itemListUnoModel,
-                            productUrl: itemListUnoProductUrl
+                            productUrl: itemListUnoProductUrl,
+                            countryManufacture: itemListUnoCountryManufacture,
+                            goodsCondition: itemListUnoGoodsCondition
                         },
                         {
                             currency: itemListDosCurrency,
@@ -147,7 +152,9 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                             grossWeight: itemListDosGrossWeight,
                             brand: itemListDosBrand,
                             model: itemListDosModel,
-                            productUrl: itemListDosProductUrl
+                            productUrl: itemListDosProductUrl,
+                            countryManufacture: itemListDosCountryManufacture,
+                            goodsCondition: itemListDosGoodsCondition
                         }
                     ]
                 }
@@ -162,14 +169,16 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                 const tiempoRespuestaParcel = tiempoRespuestaParcelMs / 1000 // Convertir a segundos
 
                 // Retornamos la respuesta y algunos datos adicionales para la validación
-                return { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo, tiempoRespuestaParcel }
+                // return { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo, tiempoRespuestaParcel }
+                return { response, idTestCase, statusEsperado, bodyResponseEsperado, tiempoRespuestaParcel }
             })
 
             // Ejecutar todas las promesas del lote en paralelo y esperar a que terminen
             const responsesInBatch = await Promise.all(requestsToSendForBatch)
 
             // 3. Procesar y validar cada respuesta del lote
-            for (const { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo, tiempoRespuestaParcel } of responsesInBatch) {
+            // for (const { response, idTestCase, statusEsperado, bodyResponseEsperado, wayBillNo, tiempoRespuestaParcel } of responsesInBatch) {
+            for (const { response, idTestCase, statusEsperado, bodyResponseEsperado, tiempoRespuestaParcel } of responsesInBatch) {
                 const bodyResponse = await response.json()
 
                 console.log(`Response for testcase ${idTestCase}:`, bodyResponse)
@@ -210,8 +219,10 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                 // La lógica de validación ahora es más explícita y segura
                 let statusCorrecto: boolean
                 let bodyResponseEsperadoCorrecto: boolean
+                let trackingUrlCorrecto: boolean
                 let mensajeErrorObtenido: string = ''
                 let wayBillNoObtenido: string = ''
+                let trackingUrl: string = ''
 
                 const statusObtenido = response.status()
 
@@ -220,14 +231,27 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                     //Uso de switch case para la conversión
                     switch (statusObtenido) {
                         case 201:
-                            if (normalizeForComparison(bodyResponse) === normalizeForComparison(JSON.parse(bodyResponseEsperado))) {
+                            mensajeErrorObtenido = bodyResponse.message
+                            // wayBillNoObtenido = wayBillNo ?? 'No se creo Parcel'
+                            wayBillNoObtenido = bodyResponse.wayBillNo ?? 'No se creo Parcel'
+                            trackingUrl = bodyResponse.trackingUrl ?? 'No se creo Parcel'
+
+                            // 1. Extraer la emisión (los 2 primeros dígitos) y el remito (el resto)
+                            const emision = wayBillNoObtenido.substring(0, 2); // '25'
+                            const remito = wayBillNoObtenido.substring(2);     // '41263813'
+
+                            // 2. Construir la ruta URL esperada usando las partes extraídas
+                            const rutaEsperada = `https://tracking.olvaexpress.pe?emision=${emision}&remito=${remito}`;
+
+                            // 3. Validar si la URL proporcionada coincide con la URL esperada
+                            trackingUrlCorrecto = trackingUrl === rutaEsperada
+
+                            if (trackingUrlCorrecto) {
                                 bodyResponseEsperadoCorrecto = true
                             } else {
                                 bodyResponseEsperadoCorrecto = false
                             }
 
-                            mensajeErrorObtenido = bodyResponse.message
-                            wayBillNoObtenido = wayBillNo ?? 'No se creo Parcel'
                             break
                         default:
                             if (normalizeForComparison(bodyResponse) === normalizeForComparison(JSON.parse(bodyResponseEsperado))) {
@@ -238,6 +262,7 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
 
                             mensajeErrorObtenido = bodyResponse.message
                             wayBillNoObtenido = 'No se creo Parcel'
+                            trackingUrl = 'No se creo Parcel'
                             break
                     }
                 } else {
@@ -245,7 +270,24 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                     statusCorrecto = false
                     bodyResponseEsperadoCorrecto = false
                     mensajeErrorObtenido = bodyResponse.message
-                    wayBillNoObtenido = wayBillNo ?? 'No se creo Parcel'
+                    wayBillNoObtenido = bodyResponse.wayBillNo ?? 'No se creo Parcel'
+                    trackingUrl = bodyResponse.trackingUrl ?? 'No se creo Parcel'
+
+                    if (trackingUrl !== 'No se creo Parcel') {
+                        // 1. Extraer la emisión (los 2 primeros dígitos) y el remito (el resto)
+                        const emision = wayBillNoObtenido.substring(0, 2); // '25'
+                        const remito = wayBillNoObtenido.substring(2);     // '41263813'
+
+                        // 2. Construir la ruta URL esperada usando las partes extraídas
+                        const rutaEsperada = `https://tracking.olvaexpress.pe?emision=${emision}&remito=${remito}`;
+
+                        // 3. Validar si la URL proporcionada coincide con la URL esperada
+                        trackingUrlCorrecto = trackingUrl === rutaEsperada
+                    } else {
+                        trackingUrlCorrecto = false
+                    }
+
+
                     console.log(`Error obtenido para la fila con ID Test Case ${idTestCase}: ${statusObtenido} - ${mensajeErrorObtenido}`)
                 }
 
@@ -259,6 +301,7 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                     bodyResponseEsperadoCorrecto: bodyResponseEsperadoCorrecto,
                     mensajeErrorObtenido: mensajeErrorObtenido,
                     wayBillNo: wayBillNoObtenido,
+                    trackingUrl: trackingUrl,
                     tiempoRespuestaToken: tiempoRespuestaToken,
                     tiempoRespuestaParcel: tiempoRespuestaParcel
                 })
@@ -299,6 +342,7 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                 'EL BODY RESPONSE ES CORRECTO?',
                 'MENSAJE OBTENIDO',
                 'PARCEL CREADO',
+                'TRACKING URL',
                 'TIEMPO RESPUESTA TOKEN (s)',
                 'TIEMPO RESPUESTA PARCEL (s)'
             ],
@@ -312,6 +356,7 @@ test.describe('Pruebas de la API de Parcel Declare con Excel', () => {
                 (r) => (r.bodyResponseEsperadoCorrecto ? 'Sí' : 'No'),
                 (r) => r.mensajeErrorObtenido,
                 (r) => r.wayBillNo,
+                (r) => r.trackingUrl,
                 (r) => r.tiempoRespuestaToken ?? 0,
                 (r) => r.tiempoRespuestaParcel ?? 0
             ]

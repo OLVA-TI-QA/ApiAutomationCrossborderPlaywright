@@ -18,7 +18,7 @@ export enum testType {
 }
 
 export interface ParcelDeclareRequestBody {
-    countryManufacture: string | null;
+    fromCountry: string | null;
     logisticsCode: string | null;
     currency: string | null;
     grossWeight: string | null;
@@ -46,6 +46,8 @@ export interface ItemList {
     brand: string | null;
     model: string | null;
     productUrl: string | null;
+    countryManufacture: string | null;
+    goodsCondition: string | null;
 }
 
 export interface Info {
@@ -77,24 +79,25 @@ export interface ExcelValidacionExportParcelDeclare {
     bodyResponseObtenido: string
     bodyResponseEsperadoCorrecto: boolean
     mensajeErrorObtenido: string
-    wayBillNo: string
+    wayBillNo: string;
+    trackingUrl: string
     tiempoRespuestaToken?: number  // Tiempo en segundos
     tiempoRespuestaParcel?: number // Tiempo en segundos
 }
 
 export interface LastMileRequestBody {
-    fullName: string | null;
-    address: string | null;
-    email: string | null;
-    mobilePhone: string | null;
-    idUbigeo: string | null;
-    zipCode: string | null;
+    fullName: string | null
+    address: string | null
+    email: string | null
+    mobilePhone: string | null
+    idUbigeo: string | null
+    zipCode: string | null
 }
 
 export interface ManifestDeclareRequestBody {
-    masterAirWayBill: string | null;
-    flightNumber: string | null;
-    declareCountry: string | null;
+    masterAirWayBill: string | null
+    flightNumber: string | null
+    declareCountry: string | null
     etd: string | null;
     eta: string | null;
     fromPortCode: string | null;

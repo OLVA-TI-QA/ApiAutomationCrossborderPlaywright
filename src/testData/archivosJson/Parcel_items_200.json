@@ -1,5 +1,5 @@
 {
-  "countryManufacture": "PE",
+  "fromCountry": "PE",
   "logisticsCode": "PEGLOG-98XZ561234",
   "currency": "USD",
   "grossWeight": "8.120",
@@ -9,7 +9,6 @@
   "ctnNumber": "12341234123412341",
   "shipping": "35.500",
   "invoiceNumber": "1234",
-  "wayBillNo": "TIFA252605",
   "insurance": "48.75",
   "receiverInfo": {
     "address": "Jr. Los Pinos 451, Surco",
@@ -30,7 +29,9 @@
       "grossWeight": "2.055",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-001"
+      "productUrl": "https://shop.example.cn/item/LEN-001",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -41,7 +42,9 @@
       "grossWeight": "1.000",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-002"
+      "productUrl": "https://shop.example.cn/item/XIA-002",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -52,7 +55,9 @@
       "grossWeight": "1.215",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-003"
+      "productUrl": "https://shop.example.cn/item/MIC-003",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -63,7 +68,9 @@
       "grossWeight": "0.332",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-004"
+      "productUrl": "https://shop.example.cn/item/XIA-004",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -74,7 +81,9 @@
       "grossWeight": "0.729",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-005"
+      "productUrl": "https://shop.example.cn/item/LEN-005",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -85,7 +94,9 @@
       "grossWeight": "2.335",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-006"
+      "productUrl": "https://shop.example.cn/item/LEN-006",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -96,7 +107,9 @@
       "grossWeight": "2.233",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-007"
+      "productUrl": "https://shop.example.cn/item/SAM-007",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -107,7 +120,9 @@
       "grossWeight": "2.191",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-008"
+      "productUrl": "https://shop.example.cn/item/XIA-008",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -118,7 +133,9 @@
       "grossWeight": "2.206",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-009"
+      "productUrl": "https://shop.example.cn/item/MIC-009",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -129,7 +146,9 @@
       "grossWeight": "0.431",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-010"
+      "productUrl": "https://shop.example.cn/item/XIA-010",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -140,7 +159,9 @@
       "grossWeight": "1.791",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-011"
+      "productUrl": "https://shop.example.cn/item/DEL-011",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -151,7 +172,9 @@
       "grossWeight": "1.016",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-012"
+      "productUrl": "https://shop.example.cn/item/APP-012",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -162,7 +185,9 @@
       "grossWeight": "2.009",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-013"
+      "productUrl": "https://shop.example.cn/item/AMA-013",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -173,7 +198,9 @@
       "grossWeight": "1.213",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-014"
+      "productUrl": "https://shop.example.cn/item/SAM-014",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -184,7 +211,9 @@
       "grossWeight": "1.954",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-015"
+      "productUrl": "https://shop.example.cn/item/ACE-015",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -195,7 +224,9 @@
       "grossWeight": "1.088",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-016"
+      "productUrl": "https://shop.example.cn/item/MIC-016",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -206,7 +237,9 @@
       "grossWeight": "0.585",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-017"
+      "productUrl": "https://shop.example.cn/item/ACE-017",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -217,7 +250,9 @@
       "grossWeight": "1.848",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-018"
+      "productUrl": "https://shop.example.cn/item/SAM-018",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -228,7 +263,9 @@
       "grossWeight": "1.403",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-019"
+      "productUrl": "https://shop.example.cn/item/ANK-019",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -239,7 +276,9 @@
       "grossWeight": "0.800",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-020"
+      "productUrl": "https://shop.example.cn/item/SAM-020",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -250,7 +289,9 @@
       "grossWeight": "0.148",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-021"
+      "productUrl": "https://shop.example.cn/item/HP-021",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -261,7 +302,9 @@
       "grossWeight": "1.143",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-022"
+      "productUrl": "https://shop.example.cn/item/MIC-022",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -272,7 +315,9 @@
       "grossWeight": "1.174",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-023"
+      "productUrl": "https://shop.example.cn/item/XIA-023",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -283,7 +328,9 @@
       "grossWeight": "1.068",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-024"
+      "productUrl": "https://shop.example.cn/item/LEN-024",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -294,7 +341,9 @@
       "grossWeight": "0.941",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-025"
+      "productUrl": "https://shop.example.cn/item/SON-025",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -305,7 +354,9 @@
       "grossWeight": "0.643",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-026"
+      "productUrl": "https://shop.example.cn/item/LEN-026",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -316,7 +367,9 @@
       "grossWeight": "2.104",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-027"
+      "productUrl": "https://shop.example.cn/item/XIA-027",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -327,7 +380,9 @@
       "grossWeight": "0.540",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-028"
+      "productUrl": "https://shop.example.cn/item/MIC-028",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -338,7 +393,9 @@
       "grossWeight": "0.606",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-029"
+      "productUrl": "https://shop.example.cn/item/LEN-029",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -349,7 +406,9 @@
       "grossWeight": "1.584",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-030"
+      "productUrl": "https://shop.example.cn/item/XIA-030",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -360,7 +419,9 @@
       "grossWeight": "0.223",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-031"
+      "productUrl": "https://shop.example.cn/item/APP-031",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -371,7 +432,9 @@
       "grossWeight": "0.915",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-032"
+      "productUrl": "https://shop.example.cn/item/MIC-032",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -382,7 +445,9 @@
       "grossWeight": "2.119",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-033"
+      "productUrl": "https://shop.example.cn/item/ACE-033",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -393,7 +458,9 @@
       "grossWeight": "2.321",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-034"
+      "productUrl": "https://shop.example.cn/item/LEN-034",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -404,7 +471,9 @@
       "grossWeight": "0.997",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-035"
+      "productUrl": "https://shop.example.cn/item/HUA-035",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -415,7 +484,9 @@
       "grossWeight": "0.846",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-036"
+      "productUrl": "https://shop.example.cn/item/ACE-036",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -426,7 +497,9 @@
       "grossWeight": "0.364",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-037"
+      "productUrl": "https://shop.example.cn/item/AMA-037",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -437,7 +510,9 @@
       "grossWeight": "2.274",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-038"
+      "productUrl": "https://shop.example.cn/item/ACE-038",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -448,7 +523,9 @@
       "grossWeight": "0.261",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-039"
+      "productUrl": "https://shop.example.cn/item/APP-039",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -459,7 +536,9 @@
       "grossWeight": "1.407",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-040"
+      "productUrl": "https://shop.example.cn/item/HP-040",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -470,7 +549,9 @@
       "grossWeight": "1.768",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-041"
+      "productUrl": "https://shop.example.cn/item/DEL-041",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -481,7 +562,9 @@
       "grossWeight": "2.166",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-042"
+      "productUrl": "https://shop.example.cn/item/MIC-042",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -492,7 +575,9 @@
       "grossWeight": "2.422",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-043"
+      "productUrl": "https://shop.example.cn/item/XIA-043",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -503,7 +588,9 @@
       "grossWeight": "2.093",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-044"
+      "productUrl": "https://shop.example.cn/item/HP-044",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -514,7 +601,9 @@
       "grossWeight": "1.728",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-045"
+      "productUrl": "https://shop.example.cn/item/SON-045",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -525,7 +614,9 @@
       "grossWeight": "2.253",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-046"
+      "productUrl": "https://shop.example.cn/item/APP-046",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -536,7 +627,9 @@
       "grossWeight": "0.355",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-047"
+      "productUrl": "https://shop.example.cn/item/ANK-047",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -547,7 +640,9 @@
       "grossWeight": "0.585",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-048"
+      "productUrl": "https://shop.example.cn/item/DEL-048",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -558,7 +653,9 @@
       "grossWeight": "1.289",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-049"
+      "productUrl": "https://shop.example.cn/item/DEL-049",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -569,7 +666,9 @@
       "grossWeight": "0.248",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-050"
+      "productUrl": "https://shop.example.cn/item/HP-050",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -580,7 +679,9 @@
       "grossWeight": "0.444",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-051"
+      "productUrl": "https://shop.example.cn/item/SON-051",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -591,7 +692,9 @@
       "grossWeight": "2.395",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-052"
+      "productUrl": "https://shop.example.cn/item/MIC-052",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -602,7 +705,9 @@
       "grossWeight": "0.822",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-053"
+      "productUrl": "https://shop.example.cn/item/HUA-053",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -613,7 +718,9 @@
       "grossWeight": "0.770",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-054"
+      "productUrl": "https://shop.example.cn/item/DEL-054",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -624,7 +731,9 @@
       "grossWeight": "0.257",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-055"
+      "productUrl": "https://shop.example.cn/item/SAM-055",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -635,7 +744,9 @@
       "grossWeight": "2.119",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-056"
+      "productUrl": "https://shop.example.cn/item/HUA-056",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -646,7 +757,9 @@
       "grossWeight": "0.154",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-057"
+      "productUrl": "https://shop.example.cn/item/HP-057",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -657,7 +770,9 @@
       "grossWeight": "1.497",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-058"
+      "productUrl": "https://shop.example.cn/item/AMA-058",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -668,7 +783,9 @@
       "grossWeight": "1.397",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-059"
+      "productUrl": "https://shop.example.cn/item/ANK-059",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -679,7 +796,9 @@
       "grossWeight": "2.061",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-060"
+      "productUrl": "https://shop.example.cn/item/ANK-060",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -690,7 +809,9 @@
       "grossWeight": "0.864",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-061"
+      "productUrl": "https://shop.example.cn/item/HUA-061",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -701,7 +822,9 @@
       "grossWeight": "1.831",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-062"
+      "productUrl": "https://shop.example.cn/item/HP-062",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -712,7 +835,9 @@
       "grossWeight": "2.453",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-063"
+      "productUrl": "https://shop.example.cn/item/HUA-063",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -723,7 +848,9 @@
       "grossWeight": "1.301",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-064"
+      "productUrl": "https://shop.example.cn/item/LEN-064",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -734,7 +861,9 @@
       "grossWeight": "0.965",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-065"
+      "productUrl": "https://shop.example.cn/item/SON-065",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -745,7 +874,9 @@
       "grossWeight": "0.644",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-066"
+      "productUrl": "https://shop.example.cn/item/AMA-066",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -756,7 +887,9 @@
       "grossWeight": "0.498",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-067"
+      "productUrl": "https://shop.example.cn/item/XIA-067",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -767,7 +900,9 @@
       "grossWeight": "0.880",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-068"
+      "productUrl": "https://shop.example.cn/item/HP-068",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -778,7 +913,9 @@
       "grossWeight": "0.105",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-069"
+      "productUrl": "https://shop.example.cn/item/ANK-069",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -789,7 +926,9 @@
       "grossWeight": "1.243",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-070"
+      "productUrl": "https://shop.example.cn/item/LEN-070",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -800,7 +939,9 @@
       "grossWeight": "1.871",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-071"
+      "productUrl": "https://shop.example.cn/item/SAM-071",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -811,7 +952,9 @@
       "grossWeight": "1.339",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-072"
+      "productUrl": "https://shop.example.cn/item/HUA-072",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -822,7 +965,9 @@
       "grossWeight": "2.311",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-073"
+      "productUrl": "https://shop.example.cn/item/ACE-073",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -833,7 +978,9 @@
       "grossWeight": "0.347",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-074"
+      "productUrl": "https://shop.example.cn/item/SON-074",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -844,7 +991,9 @@
       "grossWeight": "1.767",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-075"
+      "productUrl": "https://shop.example.cn/item/SAM-075",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -855,7 +1004,9 @@
       "grossWeight": "2.356",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-076"
+      "productUrl": "https://shop.example.cn/item/AMA-076",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -866,7 +1017,9 @@
       "grossWeight": "0.281",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-077"
+      "productUrl": "https://shop.example.cn/item/ACE-077",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -877,7 +1030,9 @@
       "grossWeight": "0.158",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-078"
+      "productUrl": "https://shop.example.cn/item/ANK-078",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -888,7 +1043,9 @@
       "grossWeight": "2.400",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-079"
+      "productUrl": "https://shop.example.cn/item/SON-079",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -899,7 +1056,9 @@
       "grossWeight": "0.654",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-080"
+      "productUrl": "https://shop.example.cn/item/MIC-080",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -910,7 +1069,9 @@
       "grossWeight": "2.136",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-081"
+      "productUrl": "https://shop.example.cn/item/LEN-081",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -921,7 +1082,9 @@
       "grossWeight": "0.273",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-082"
+      "productUrl": "https://shop.example.cn/item/HUA-082",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -932,7 +1095,9 @@
       "grossWeight": "0.523",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-083"
+      "productUrl": "https://shop.example.cn/item/DEL-083",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -943,7 +1108,9 @@
       "grossWeight": "1.534",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-084"
+      "productUrl": "https://shop.example.cn/item/AMA-084",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -954,7 +1121,9 @@
       "grossWeight": "2.094",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-085"
+      "productUrl": "https://shop.example.cn/item/SAM-085",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -965,7 +1134,9 @@
       "grossWeight": "0.877",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-086"
+      "productUrl": "https://shop.example.cn/item/APP-086",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -976,7 +1147,9 @@
       "grossWeight": "2.174",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-087"
+      "productUrl": "https://shop.example.cn/item/LEN-087",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -987,7 +1160,9 @@
       "grossWeight": "2.214",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-088"
+      "productUrl": "https://shop.example.cn/item/SON-088",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -998,7 +1173,9 @@
       "grossWeight": "1.081",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-089"
+      "productUrl": "https://shop.example.cn/item/SAM-089",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1009,7 +1186,9 @@
       "grossWeight": "0.487",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-090"
+      "productUrl": "https://shop.example.cn/item/AMA-090",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1020,7 +1199,9 @@
       "grossWeight": "1.846",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-091"
+      "productUrl": "https://shop.example.cn/item/SAM-091",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1031,7 +1212,9 @@
       "grossWeight": "1.542",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-092"
+      "productUrl": "https://shop.example.cn/item/APP-092",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1042,7 +1225,9 @@
       "grossWeight": "0.837",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-093"
+      "productUrl": "https://shop.example.cn/item/HUA-093",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1053,7 +1238,9 @@
       "grossWeight": "0.722",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-094"
+      "productUrl": "https://shop.example.cn/item/DEL-094",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1064,7 +1251,9 @@
       "grossWeight": "1.759",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-095"
+      "productUrl": "https://shop.example.cn/item/XIA-095",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1075,7 +1264,9 @@
       "grossWeight": "2.189",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-096"
+      "productUrl": "https://shop.example.cn/item/DEL-096",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1086,7 +1277,9 @@
       "grossWeight": "2.162",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-097"
+      "productUrl": "https://shop.example.cn/item/SON-097",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1097,7 +1290,9 @@
       "grossWeight": "2.177",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-098"
+      "productUrl": "https://shop.example.cn/item/HUA-098",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1108,7 +1303,9 @@
       "grossWeight": "1.142",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-099"
+      "productUrl": "https://shop.example.cn/item/SAM-099",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1119,7 +1316,9 @@
       "grossWeight": "1.877",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-100"
+      "productUrl": "https://shop.example.cn/item/LEN-100",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1130,7 +1329,9 @@
       "grossWeight": "1.920",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-101"
+      "productUrl": "https://shop.example.cn/item/AMA-101",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1141,7 +1342,9 @@
       "grossWeight": "2.268",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-102"
+      "productUrl": "https://shop.example.cn/item/SAM-102",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1152,7 +1355,9 @@
       "grossWeight": "0.117",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-103"
+      "productUrl": "https://shop.example.cn/item/MIC-103",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1163,7 +1368,9 @@
       "grossWeight": "1.493",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-104"
+      "productUrl": "https://shop.example.cn/item/XIA-104",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1174,7 +1381,9 @@
       "grossWeight": "0.134",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-105"
+      "productUrl": "https://shop.example.cn/item/AMA-105",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1185,7 +1394,9 @@
       "grossWeight": "1.120",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-106"
+      "productUrl": "https://shop.example.cn/item/LEN-106",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1196,7 +1407,9 @@
       "grossWeight": "2.397",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-107"
+      "productUrl": "https://shop.example.cn/item/ACE-107",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1207,7 +1420,9 @@
       "grossWeight": "2.395",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-108"
+      "productUrl": "https://shop.example.cn/item/XIA-108",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1218,7 +1433,9 @@
       "grossWeight": "1.393",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-109"
+      "productUrl": "https://shop.example.cn/item/SON-109",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1229,7 +1446,9 @@
       "grossWeight": "2.020",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-110"
+      "productUrl": "https://shop.example.cn/item/DEL-110",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1240,7 +1459,9 @@
       "grossWeight": "0.919",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-111"
+      "productUrl": "https://shop.example.cn/item/DEL-111",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1251,7 +1472,9 @@
       "grossWeight": "0.537",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-112"
+      "productUrl": "https://shop.example.cn/item/MIC-112",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1262,7 +1485,9 @@
       "grossWeight": "0.963",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-113"
+      "productUrl": "https://shop.example.cn/item/SON-113",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1273,7 +1498,9 @@
       "grossWeight": "0.621",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-114"
+      "productUrl": "https://shop.example.cn/item/ACE-114",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1284,7 +1511,9 @@
       "grossWeight": "1.920",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-115"
+      "productUrl": "https://shop.example.cn/item/HP-115",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1295,7 +1524,9 @@
       "grossWeight": "0.773",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-116"
+      "productUrl": "https://shop.example.cn/item/ACE-116",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1306,7 +1537,9 @@
       "grossWeight": "1.820",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-117"
+      "productUrl": "https://shop.example.cn/item/MIC-117",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1317,7 +1550,9 @@
       "grossWeight": "0.762",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-118"
+      "productUrl": "https://shop.example.cn/item/XIA-118",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1328,7 +1563,9 @@
       "grossWeight": "1.409",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-119"
+      "productUrl": "https://shop.example.cn/item/HUA-119",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1339,7 +1576,9 @@
       "grossWeight": "1.937",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-120"
+      "productUrl": "https://shop.example.cn/item/HP-120",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1350,7 +1589,9 @@
       "grossWeight": "1.641",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-121"
+      "productUrl": "https://shop.example.cn/item/LEN-121",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1361,7 +1602,9 @@
       "grossWeight": "0.796",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-122"
+      "productUrl": "https://shop.example.cn/item/HUA-122",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1372,7 +1615,9 @@
       "grossWeight": "2.180",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-123"
+      "productUrl": "https://shop.example.cn/item/MIC-123",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1383,7 +1628,9 @@
       "grossWeight": "1.378",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-124"
+      "productUrl": "https://shop.example.cn/item/MIC-124",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1394,7 +1641,9 @@
       "grossWeight": "1.040",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-125"
+      "productUrl": "https://shop.example.cn/item/APP-125",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1405,7 +1654,9 @@
       "grossWeight": "2.082",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-126"
+      "productUrl": "https://shop.example.cn/item/HP-126",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1416,7 +1667,9 @@
       "grossWeight": "0.376",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-127"
+      "productUrl": "https://shop.example.cn/item/XIA-127",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1427,7 +1680,9 @@
       "grossWeight": "1.283",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-128"
+      "productUrl": "https://shop.example.cn/item/HUA-128",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1438,7 +1693,9 @@
       "grossWeight": "1.385",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-129"
+      "productUrl": "https://shop.example.cn/item/ACE-129",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1449,7 +1706,9 @@
       "grossWeight": "1.429",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-130"
+      "productUrl": "https://shop.example.cn/item/HUA-130",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1460,7 +1719,9 @@
       "grossWeight": "1.672",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-131"
+      "productUrl": "https://shop.example.cn/item/ANK-131",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1471,7 +1732,9 @@
       "grossWeight": "1.864",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-132"
+      "productUrl": "https://shop.example.cn/item/ANK-132",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1482,7 +1745,9 @@
       "grossWeight": "1.455",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-133"
+      "productUrl": "https://shop.example.cn/item/LEN-133",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1493,7 +1758,9 @@
       "grossWeight": "1.171",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-134"
+      "productUrl": "https://shop.example.cn/item/DEL-134",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1504,7 +1771,9 @@
       "grossWeight": "1.920",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-135"
+      "productUrl": "https://shop.example.cn/item/XIA-135",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1515,7 +1784,9 @@
       "grossWeight": "1.556",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-136"
+      "productUrl": "https://shop.example.cn/item/HUA-136",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1526,7 +1797,9 @@
       "grossWeight": "0.220",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-137"
+      "productUrl": "https://shop.example.cn/item/ANK-137",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1537,7 +1810,9 @@
       "grossWeight": "1.786",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-138"
+      "productUrl": "https://shop.example.cn/item/DEL-138",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1548,7 +1823,9 @@
       "grossWeight": "1.079",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-139"
+      "productUrl": "https://shop.example.cn/item/SON-139",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1559,7 +1836,9 @@
       "grossWeight": "1.615",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-140"
+      "productUrl": "https://shop.example.cn/item/APP-140",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1570,7 +1849,9 @@
       "grossWeight": "1.443",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-141"
+      "productUrl": "https://shop.example.cn/item/AMA-141",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1581,7 +1862,9 @@
       "grossWeight": "0.654",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-142"
+      "productUrl": "https://shop.example.cn/item/XIA-142",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1592,7 +1875,9 @@
       "grossWeight": "2.028",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-143"
+      "productUrl": "https://shop.example.cn/item/DEL-143",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1603,7 +1888,9 @@
       "grossWeight": "0.752",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-144"
+      "productUrl": "https://shop.example.cn/item/XIA-144",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1614,7 +1901,9 @@
       "grossWeight": "2.204",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-145"
+      "productUrl": "https://shop.example.cn/item/AMA-145",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1625,7 +1914,9 @@
       "grossWeight": "2.113",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-146"
+      "productUrl": "https://shop.example.cn/item/SAM-146",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1636,7 +1927,9 @@
       "grossWeight": "0.151",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-147"
+      "productUrl": "https://shop.example.cn/item/HP-147",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1647,7 +1940,9 @@
       "grossWeight": "0.886",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-148"
+      "productUrl": "https://shop.example.cn/item/LEN-148",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1658,7 +1953,9 @@
       "grossWeight": "0.107",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-149"
+      "productUrl": "https://shop.example.cn/item/MIC-149",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1669,7 +1966,9 @@
       "grossWeight": "1.289",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-150"
+      "productUrl": "https://shop.example.cn/item/MIC-150",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1680,7 +1979,9 @@
       "grossWeight": "0.619",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-151"
+      "productUrl": "https://shop.example.cn/item/SON-151",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1691,7 +1992,9 @@
       "grossWeight": "0.281",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-152"
+      "productUrl": "https://shop.example.cn/item/SON-152",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1702,7 +2005,9 @@
       "grossWeight": "1.082",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-153"
+      "productUrl": "https://shop.example.cn/item/ANK-153",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1713,7 +2018,9 @@
       "grossWeight": "0.345",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-154"
+      "productUrl": "https://shop.example.cn/item/XIA-154",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1724,7 +2031,9 @@
       "grossWeight": "0.412",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-155"
+      "productUrl": "https://shop.example.cn/item/AMA-155",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1735,7 +2044,9 @@
       "grossWeight": "0.170",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-156"
+      "productUrl": "https://shop.example.cn/item/HP-156",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1746,7 +2057,9 @@
       "grossWeight": "1.852",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-157"
+      "productUrl": "https://shop.example.cn/item/HP-157",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1757,7 +2070,9 @@
       "grossWeight": "2.204",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-158"
+      "productUrl": "https://shop.example.cn/item/XIA-158",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1768,7 +2083,9 @@
       "grossWeight": "1.985",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-159"
+      "productUrl": "https://shop.example.cn/item/ANK-159",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1779,7 +2096,9 @@
       "grossWeight": "0.779",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-160"
+      "productUrl": "https://shop.example.cn/item/HUA-160",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1790,7 +2109,9 @@
       "grossWeight": "0.614",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-161"
+      "productUrl": "https://shop.example.cn/item/APP-161",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1801,7 +2122,9 @@
       "grossWeight": "2.271",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-162"
+      "productUrl": "https://shop.example.cn/item/DEL-162",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1812,7 +2135,9 @@
       "grossWeight": "1.101",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-163"
+      "productUrl": "https://shop.example.cn/item/HP-163",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1823,7 +2148,9 @@
       "grossWeight": "0.175",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-164"
+      "productUrl": "https://shop.example.cn/item/AMA-164",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1834,7 +2161,9 @@
       "grossWeight": "2.386",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-165"
+      "productUrl": "https://shop.example.cn/item/SAM-165",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1845,7 +2174,9 @@
       "grossWeight": "1.222",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-166"
+      "productUrl": "https://shop.example.cn/item/XIA-166",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1856,7 +2187,9 @@
       "grossWeight": "2.162",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-167"
+      "productUrl": "https://shop.example.cn/item/APP-167",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1867,7 +2200,9 @@
       "grossWeight": "2.255",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-168"
+      "productUrl": "https://shop.example.cn/item/AMA-168",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1878,7 +2213,9 @@
       "grossWeight": "2.256",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-169"
+      "productUrl": "https://shop.example.cn/item/DEL-169",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1889,7 +2226,9 @@
       "grossWeight": "0.163",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-170"
+      "productUrl": "https://shop.example.cn/item/ANK-170",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1900,7 +2239,9 @@
       "grossWeight": "1.293",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-171"
+      "productUrl": "https://shop.example.cn/item/HP-171",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1911,7 +2252,9 @@
       "grossWeight": "1.348",
       "brand": "Dell",
       "model": "Venue 8 Pro",
-      "productUrl": "https://shop.example.cn/item/DEL-172"
+      "productUrl": "https://shop.example.cn/item/DEL-172",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1922,7 +2265,9 @@
       "grossWeight": "2.046",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-173"
+      "productUrl": "https://shop.example.cn/item/XIA-173",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1933,7 +2278,9 @@
       "grossWeight": "0.371",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-174"
+      "productUrl": "https://shop.example.cn/item/LEN-174",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1944,7 +2291,9 @@
       "grossWeight": "1.308",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-175"
+      "productUrl": "https://shop.example.cn/item/MIC-175",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1955,7 +2304,9 @@
       "grossWeight": "1.086",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-176"
+      "productUrl": "https://shop.example.cn/item/AMA-176",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1966,7 +2317,9 @@
       "grossWeight": "1.022",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-177"
+      "productUrl": "https://shop.example.cn/item/MIC-177",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1977,7 +2330,9 @@
       "grossWeight": "1.541",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-178"
+      "productUrl": "https://shop.example.cn/item/ACE-178",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -1988,7 +2343,9 @@
       "grossWeight": "0.361",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-179"
+      "productUrl": "https://shop.example.cn/item/XIA-179",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -1999,7 +2356,9 @@
       "grossWeight": "1.052",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-180"
+      "productUrl": "https://shop.example.cn/item/ACE-180",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -2010,7 +2369,9 @@
       "grossWeight": "0.900",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-181"
+      "productUrl": "https://shop.example.cn/item/APP-181",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -2021,7 +2382,9 @@
       "grossWeight": "2.449",
       "brand": "Sony",
       "model": "Xperia Z4 Tablet",
-      "productUrl": "https://shop.example.cn/item/SON-182"
+      "productUrl": "https://shop.example.cn/item/SON-182",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -2032,7 +2395,9 @@
       "grossWeight": "2.185",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-183"
+      "productUrl": "https://shop.example.cn/item/SAM-183",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -2043,7 +2408,9 @@
       "grossWeight": "1.401",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-184"
+      "productUrl": "https://shop.example.cn/item/AMA-184",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -2054,7 +2421,9 @@
       "grossWeight": "2.449",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-185"
+      "productUrl": "https://shop.example.cn/item/XIA-185",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -2065,7 +2434,9 @@
       "grossWeight": "0.416",
       "brand": "Amazon",
       "model": "Fire HD 10",
-      "productUrl": "https://shop.example.cn/item/AMA-186"
+      "productUrl": "https://shop.example.cn/item/AMA-186",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -2076,7 +2447,9 @@
       "grossWeight": "1.997",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-187"
+      "productUrl": "https://shop.example.cn/item/LEN-187",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -2087,7 +2460,9 @@
       "grossWeight": "1.420",
       "brand": "Apple",
       "model": "iPad 9th Gen",
-      "productUrl": "https://shop.example.cn/item/APP-188"
+      "productUrl": "https://shop.example.cn/item/APP-188",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -2098,7 +2473,9 @@
       "grossWeight": "0.366",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-189"
+      "productUrl": "https://shop.example.cn/item/LEN-189",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -2109,7 +2486,9 @@
       "grossWeight": "1.285",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-190"
+      "productUrl": "https://shop.example.cn/item/LEN-190",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -2120,7 +2499,9 @@
       "grossWeight": "1.445",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-191"
+      "productUrl": "https://shop.example.cn/item/XIA-191",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -2131,7 +2512,9 @@
       "grossWeight": "1.419",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-192"
+      "productUrl": "https://shop.example.cn/item/ANK-192",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -2142,7 +2525,9 @@
       "grossWeight": "0.225",
       "brand": "HP",
       "model": "ElitePad 1000",
-      "productUrl": "https://shop.example.cn/item/HP-193"
+      "productUrl": "https://shop.example.cn/item/HP-193",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -2153,7 +2538,9 @@
       "grossWeight": "2.471",
       "brand": "Anker",
       "model": "PowerCore 20000",
-      "productUrl": "https://shop.example.cn/item/ANK-194"
+      "productUrl": "https://shop.example.cn/item/ANK-194",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -2164,7 +2551,9 @@
       "grossWeight": "1.373",
       "brand": "Microsoft",
       "model": "Surface Go 3",
-      "productUrl": "https://shop.example.cn/item/MIC-195"
+      "productUrl": "https://shop.example.cn/item/MIC-195",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -2175,7 +2564,9 @@
       "grossWeight": "1.208",
       "brand": "Acer",
       "model": "Iconia One 10",
-      "productUrl": "https://shop.example.cn/item/ACE-196"
+      "productUrl": "https://shop.example.cn/item/ACE-196",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -2186,7 +2577,9 @@
       "grossWeight": "1.864",
       "brand": "Huawei",
       "model": "MatePad 11",
-      "productUrl": "https://shop.example.cn/item/HUA-197"
+      "productUrl": "https://shop.example.cn/item/HUA-197",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -2197,7 +2590,9 @@
       "grossWeight": "1.175",
       "brand": "Lenovo",
       "model": "Tab P11",
-      "productUrl": "https://shop.example.cn/item/LEN-198"
+      "productUrl": "https://shop.example.cn/item/LEN-198",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     },
     {
       "currency": "USD",
@@ -2208,7 +2603,9 @@
       "grossWeight": "0.605",
       "brand": "Xiaomi",
       "model": "Pad 6",
-      "productUrl": "https://shop.example.cn/item/XIA-199"
+      "productUrl": "https://shop.example.cn/item/XIA-199",
+      "countryManufacture": "CN",
+      "goodsCondition": "10"
     },
     {
       "currency": "USD",
@@ -2219,7 +2616,9 @@
       "grossWeight": "0.559",
       "brand": "Samsung",
       "model": "Galaxy Tab A8",
-      "productUrl": "https://shop.example.cn/item/SAM-200"
+      "productUrl": "https://shop.example.cn/item/SAM-200",
+      "countryManufacture": "CN",
+      "goodsCondition": "20"
     }
   ]
 }
