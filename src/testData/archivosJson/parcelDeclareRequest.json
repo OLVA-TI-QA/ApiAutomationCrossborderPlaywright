@@ -11,13 +11,16 @@
   "ctnNumber": "CTN-9Z7Q-002",
   "insurance": "48.75",
   "receiverInfo": {
-    "address": "Jr. Los Pinos 456, Surco",
+    "address": "Jr. Los Pinos 451, Surco",
     "email": "recep@ejemplo.pe",
-    "fullName": "María López",
+    "fullName": "Gabriel Alessandro Benites",
     "mobilePhone": "987654321",
-    "idUbigeo": "1502",
+    "ubigeoCode":null,
+    "province": "LIMA",
+    "district": "SANTIAGO DE SURCO",
     "zipCode": "15067",
-    "identityNumber": "44556677"
+    "identityNumber": "44556678",
+    "identityNumberType": "10"
   },
   "senderInfo": {
     "address": "88 Nanshan Ave, Shenzhen",

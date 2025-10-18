@@ -15,9 +15,12 @@
     "email": "recep@ejemplo.pe",
     "fullName": "Gabriel Alessandro Benites",
     "mobilePhone": "987654321",
-    "idUbigeo": "432",
+    "ubigeoCode":null,
+    "province": "LIMA",
+    "district": "SANTIAGO DE SURCO",
     "zipCode": "15067",
-    "identityNumber": "44556678"
+    "identityNumber": "44556678",
+    "identityNumberType": "10"
   },
   "itemList": []
 }
